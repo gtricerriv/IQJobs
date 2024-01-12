@@ -25,6 +25,7 @@ export default boot(({ app }) => {
   const i18n = createI18n<{ message: MessageSchema }, MessageLanguages>({
     locale: 'en-US',
     legacy: false,
+    globalInjection: true,
     messages,
   });
 
