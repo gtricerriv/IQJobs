@@ -12,22 +12,72 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
-const linksList = [
+const menuRecruiters = [
   {
-    title: 'dashboard',
+    title: 'Applicants',
     icon: 'people',
+    color: 'teal-7',
+    link: 'applicants',
   },
   {
-    title: 'Multi-Idioma',
-    icon: 'translate',
+    title: 'Jobs',
+    icon: 'work',
+    color: 'teal-7',
+    link: 'jobs',
   },
   {
-    title: 'Metricas',
-    icon: 'monitoring',
+    title: 'Settings',
+    icon: 'settings',
+    color: 'teal-7',
+    link: 'settings',
+  },
+];
+
+const menuApplicants = [
+  {
+    title: 'Profiles',
+    icon: 'people',
+    color: 'primary',
+    link: 'profile',
   },
   {
-    title: 'Curriculum',
-    icon: 'list',
+    title: 'Jobs',
+    icon: 'work',
+    color: 'primary',
+    link: 'jobs',
+  },
+  {
+    title: 'CV',
+    icon: 'article',
+    color: 'primary',
+    link: 'cv',
+  },
+  {
+    title: 'Settings',
+    icon: 'settings',
+    color: 'primary',
+    link: 'settings',
+  },
+];
+
+const menuAdmin = [
+  {
+    title: 'Users',
+    icon: 'people',
+    color: 'red-5',
+    link: 'admin/users',
+  },
+  {
+    title: 'Jobs',
+    icon: 'work',
+    color: 'red-5',
+    link: 'admin/jobs',
+  },
+  {
+    title: 'Settings',
+    icon: 'settings',
+    color: 'red-5',
+    link: 'admin/settings',
   },
 ];
 
@@ -39,7 +89,7 @@ export default defineComponent({
   },
   setup() {
     return {
-      essentialLinks: linksList,
+      essentialLinks: menuApplicants,
     };
   },
 });

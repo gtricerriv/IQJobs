@@ -58,22 +58,31 @@ import MenuComponent from 'components/Menu.vue';
 
 import SearchBar from 'components/SearchBar.vue';
 
-const linksList = [
+const menuAdmin = [
   {
-    title: 'Provedores',
+    title: 'Users',
     icon: 'people',
+    color: 'red',
   },
   {
-    title: 'Multi-Idioma',
+    title: 'Applicants',
     icon: 'translate',
+    color: 'admin',
   },
   {
-    title: 'Metricas',
+    title: 'Recruiters',
     icon: 'monitoring',
+    color: 'admin',
   },
   {
-    title: 'Curriculum',
+    title: 'Jobs',
     icon: 'list',
+    color: 'admin',
+  },
+  {
+    title: 'Settings',
+    icon: 'list',
+    color: 'admin',
   },
 ];
 
@@ -90,7 +99,7 @@ export default defineComponent({
     const rightDrawerOpen = ref(true);
 
     return {
-      essentialLinks: linksList,
+      essentialLinks: menuAdmin,
       leftDrawerOpen,
       rightDrawerOpen,
       toggleLeftDrawer() {
