@@ -5,7 +5,7 @@ import { User } from './models/User';
 import { Profile } from './models/Profile';
 const app: Express = express();
 const port = process.env.PORT || 3000;
-
+console.log(dbConfig)
 // Configura la conexión a MongoDB Atlas utilizando la configuración de dbConfig
 mongoose.connect(dbConfig.uri)
   .then(() => {
@@ -19,6 +19,15 @@ app.get('/', (req: Request, res: Response) => {
   const newUser = new User.UserClass();
   const newProfile =  new Profile.ProfileClass();
  // newUser.profile = 'asd';
+  console.log(newUser.profile);
+
+});
+
+app.delete('/asdadsa', (req: Request, res: Response) => {
+  res.send('Express + TypeScript Server');
+  const newUser = new User.UserClass();
+  const newProfile =  new Profile.ProfileClass();
+  // newUser.profile = 'asd';
   console.log(newUser.profile);
 
 });
