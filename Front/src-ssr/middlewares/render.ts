@@ -2,10 +2,16 @@ import { RenderError } from '@quasar/app-webpack';
 import { ssrMiddleware } from 'quasar/wrappers';
 import puppeteer from 'puppeteer';
 import { Express, Request, Response, NextFunction } from 'express';
-
+import { auth } from 'express-oauth2-jwt-bearer';
 import helmet from 'helmet';
 import axios from 'axios';
-
+// Authorization middleware. When used, the Access Token must
+// exist and be verified against the Auth0 JSON Web Key Set.
+const checkJwt = auth({
+  audience: 'api.iqjobs.3xerries.tech',
+  issuerBaseURL: 'https://tech-iqjobs.us.auth0.com/',
+  tokenSigningAlg: 'RS256'
+});
 // Esta función middleware permite mostrar iframes de cualquier origen
 
 const allowAllIframes = (_req: Request, res: Response, next: NextFunction) => {
@@ -35,13 +41,20 @@ interface MiddlewareParams {
 
 export default ({ app, resolve, render, serve }: MiddlewareParams) => {
   app.use(helmet()); // Agregar configuraciones de seguridad por defecto
-
   app.all(resolve.urlPath('*'), (req: Request, res: Response, next: NextFunction) => {
     console.log('someone requested:', req.url);
     next();
   });
   // Utilizamos el middleware recién creado para permitir iframes de cualquier origen
   app.use(allowAllIframes);
+  app.get('/test',async (req, res) => {
+    res.send('test')
+  })
+
+  app.post('/job', async (req, res)=>{
+   // let job = new Jobs.JobModel();
+    //console.log(job)
+  });
 
   app.get('/proxy', async (req, res) => {
     const { url } = req.query as { url: string };
@@ -57,7 +70,7 @@ export default ({ app, resolve, render, serve }: MiddlewareParams) => {
       await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
 
 
-      await page.goto(url);
+      await page.goto(url, {timeout: 60000, waitUntil: 'domcontentloaded'});
 
       const html = await page.content();
 

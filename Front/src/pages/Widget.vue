@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-primary fixed-center window-height window-width" v-html="loadedHtml"></div>
+    <div class="fixed-center window-height window-width" v-html="loadedHtml"></div>
   </div>
 </template>
 
