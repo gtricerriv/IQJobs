@@ -1,4 +1,6 @@
 import { RouteRecordRaw } from 'vue-router';
+import { useAuth0 } from '@auth0/auth0-vue';
+
 
 const routes: RouteRecordRaw[] = [
   {
@@ -40,5 +42,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('pages/ErrorNotFound.vue'),
   },
 ];
+
+// Añadir la funcionalidad de loginWithRedirect a rutas específicas
 
 export default routes;
