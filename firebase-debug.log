@@ -1,0 +1,1302 @@
+[debug] [2024-03-04T13:42:44.116Z] ----------------------------------------------------------------------
+[debug] [2024-03-04T13:42:44.122Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-03-04T13:42:44.123Z] CLI Version:   13.4.0
+[debug] [2024-03-04T13:42:44.124Z] Platform:      win32
+[debug] [2024-03-04T13:42:44.124Z] Node Version:  v18.19.1
+[debug] [2024-03-04T13:42:44.125Z] Time:          Mon Mar 04 2024 09:42:44 GMT-0400 (Venezuela Time)
+[debug] [2024-03-04T13:42:44.125Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-04T13:42:44.536Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-04T13:42:44.537Z] > authorizing via signed-in user (3xerries@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2024-03-04T13:42:44.581Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-04T13:42:44.581Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-04T13:42:44.581Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-04T13:42:44.615Z] [hub] writing locator at C:\Users\contr\AppData\Local\Temp\hub-iqjobs-staging.json
+[debug] [2024-03-04T13:42:44.765Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-04T13:42:44.766Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-04T13:42:44.766Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-04T13:42:44.778Z] defaultcredentials: writing to file C:\Users\contr\AppData\Roaming\firebase\3xerries_gmail_com_application_default_credentials.json
+[debug] [2024-03-04T13:42:44.818Z] Setting GAC to C:\Users\contr\AppData\Roaming\firebase\3xerries_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\contr\\AppData\\Roaming\\firebase\\3xerries_gmail_com_application_default_credentials.json"}}
+[debug] [2024-03-04T13:42:44.821Z] > refreshing access token with scopes: []
+[debug] [2024-03-04T13:42:44.886Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-04T13:42:44.886Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-04T13:42:45.203Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-04T13:42:45.203Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-04T13:42:45.283Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig [none]
+[debug] [2024-03-04T13:42:45.872Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig 200
+[debug] [2024-03-04T13:42:45.873Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig {"projectId":"iqjobs-staging","storageBucket":"iqjobs-staging.appspot.com"}
+[debug] [2024-03-04T13:42:46.162Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites 
+[debug] [2024-03-04T13:42:46.991Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites 200
+[debug] [2024-03-04T13:42:46.991Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites {"sites":[{"name":"projects/iqjobs-staging/sites/iqjobs-staging","defaultUrl":"https://iqjobs-staging.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-04T13:42:46.992Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config [none]
+[debug] [2024-03-04T13:42:47.534Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config 200
+[debug] [2024-03-04T13:42:47.535Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config {"projectId":"iqjobs-staging","storageBucket":"iqjobs-staging.appspot.com","apiKey":"AIzaSyBPaTMd1oJHpxVuRfpOF4GHPtlPUOO1wMc","authDomain":"iqjobs-staging.firebaseapp.com","messagingSenderId":"436720822443"}
+[debug] [2024-03-04T13:42:47.541Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging [none]
+[debug] [2024-03-04T13:42:47.870Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging 200
+[debug] [2024-03-04T13:42:47.870Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging {"projectId":"iqjobs-staging","projectNumber":"436720822443","displayName":"Iqjobs-dev","name":"projects/iqjobs-staging","resources":{"hostingSite":"iqjobs-staging"},"state":"ACTIVE","etag":"1_28c46c1e-86ce-491b-916f-fa696c11eecb"}
+[info] i  hosting[iqjobs-staging]: Serving hosting files from: Front/dist/spa {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mFront/dist/spa\u001b[22m"}}
+[info] +  hosting[iqjobs-staging]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-03-04T13:42:48.114Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-04T13:42:48.115Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-04T13:42:48.115Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\contr\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\contr\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-04T13:42:49.190Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-04T13:42:49.190Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\" for Cloud Functions..."}}
+[debug] [2024-03-04T13:42:49.227Z] Validating nodejs source
+[debug] [2024-03-04T13:42:53.410Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T13:42:53.411Z] Building nodejs source
+[debug] [2024-03-04T13:42:53.412Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T13:42:53.423Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T13:42:53.437Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8889
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[debug] [2024-03-04T13:42:58.593Z] Got response from /__/functions.yaml {"endpoints":{"createPlanRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createPlanRoute"},"getPlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getPlanByIdRoute"},"updatePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updatePlanByIdRoute"},"deletePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deletePlanByIdRoute"},"createRoleRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createRoleRoute"},"getRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getRoleByIdRoute"},"updateRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateRoleByIdRoute"},"deleteRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteRoleByIdRoute"},"createViewRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createViewRoute"},"getViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getViewByIdRoute"},"updateViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateViewByIdRoute"},"deleteViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteViewByIdRoute"},"createUserRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createUserRoute"},"getUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getUserByIdRoute"},"updateUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateUserByIdRoute"},"deleteUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteUserByIdRoute"},"createTransactionRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createTransactionRoute"},"getTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getTransactionByIdRoute"},"updateTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateTransactionByIdRoute"},"deleteTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteTransactionByIdRoute"},"createJobRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createJobRoute"},"getJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getJobByIdRoute"},"updateJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateJobByIdRoute"},"deleteJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteJobByIdRoute"},"createProfileRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createProfileRoute"},"getProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getProfileByIdRoute"},"updateProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateProfileByIdRoute"},"deleteProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteProfileByIdRoute"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute."}}
+[info] +  functions[us-central1-createPlanRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createPlanRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createPlanRoute)."}}
+[info] +  functions[us-central1-getPlanByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getPlanByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getPlanByIdRoute)."}}
+[info] +  functions[us-central1-updatePlanByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updatePlanByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updatePlanByIdRoute)."}}
+[info] +  functions[us-central1-deletePlanByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deletePlanByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deletePlanByIdRoute)."}}
+[info] +  functions[us-central1-createRoleRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createRoleRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createRoleRoute)."}}
+[info] +  functions[us-central1-getRoleByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getRoleByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getRoleByIdRoute)."}}
+[info] +  functions[us-central1-updateRoleByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateRoleByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateRoleByIdRoute)."}}
+[info] +  functions[us-central1-deleteRoleByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteRoleByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteRoleByIdRoute)."}}
+[info] +  functions[us-central1-createViewRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createViewRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createViewRoute)."}}
+[info] +  functions[us-central1-getViewByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getViewByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getViewByIdRoute)."}}
+[info] +  functions[us-central1-updateViewByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateViewByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateViewByIdRoute)."}}
+[info] +  functions[us-central1-deleteViewByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteViewByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteViewByIdRoute)."}}
+[info] +  functions[us-central1-createUserRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createUserRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createUserRoute)."}}
+[info] +  functions[us-central1-getUserByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getUserByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getUserByIdRoute)."}}
+[info] +  functions[us-central1-updateUserByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateUserByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateUserByIdRoute)."}}
+[info] +  functions[us-central1-deleteUserByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteUserByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteUserByIdRoute)."}}
+[info] +  functions[us-central1-createTransactionRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createTransactionRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createTransactionRoute)."}}
+[info] +  functions[us-central1-getTransactionByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getTransactionByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getTransactionByIdRoute)."}}
+[info] +  functions[us-central1-updateTransactionByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateTransactionByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateTransactionByIdRoute)."}}
+[info] +  functions[us-central1-deleteTransactionByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteTransactionByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteTransactionByIdRoute)."}}
+[info] +  functions[us-central1-createJobRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createJobRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createJobRoute)."}}
+[info] +  functions[us-central1-getJobByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getJobByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getJobByIdRoute)."}}
+[info] +  functions[us-central1-updateJobByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateJobByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateJobByIdRoute)."}}
+[info] +  functions[us-central1-deleteJobByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteJobByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteJobByIdRoute)."}}
+[info] +  functions[us-central1-createProfileRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createProfileRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/createProfileRoute)."}}
+[info] +  functions[us-central1-getProfileByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getProfileByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/getProfileByIdRoute)."}}
+[info] +  functions[us-central1-updateProfileByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateProfileByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/updateProfileByIdRoute)."}}
+[info] +  functions[us-central1-deleteProfileByIdRoute]: http function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteProfileByIdRoute). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/iqjobs-staging/us-central1/deleteProfileByIdRoute)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-03-04T13:56:51.948Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T13:56:51.948Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T13:56:51.949Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T13:56:51.948Z"],"workRunningCount":1}
+[debug] [2024-03-04T13:56:51.951Z] Accepted request POST /iqjobs-staging/us-central1/createViewRoute --> us-central1-createViewRoute
+[debug] [2024-03-04T13:56:51.962Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-03-04T13:56:51.964Z] [functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/"}}
+[debug] [2024-03-04T13:56:52.006Z] [worker-pool] addWorker(us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-createViewRoute)"}}
+[debug] [2024-03-04T13:56:52.025Z] [worker-pool] Adding worker with key us-central1-createViewRoute, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-createViewRoute, total=1"}}
+[debug] [2024-03-04T13:57:00.074Z] [runtime-status] [2200] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:00.084Z] [runtime-status] [2200] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:00.085Z] [runtime-status] [2200] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-03-04T13:57:00.090Z] [runtime-status] [2200] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:08.958Z] [runtime-status] [2200] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-03-04T13:57:08.959Z] [runtime-status] [2200] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2024-03-04T13:57:08.965Z] [runtime-status] [2200] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:08.970Z] [runtime-status] [2200] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:09.084Z] [runtime-status] [2200] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T13:57:09.086Z] [runtime-status] [2200] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[info] >  Setting "Mixed" for property "ViewClass.route" {"user":"Setting \"Mixed\" for property \"ViewClass.route\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"ViewClass.route\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[info] >  Setting "Mixed" for property "JobClass.companies" {"user":"Setting \"Mixed\" for property \"JobClass.companies\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"JobClass.companies\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[debug] [2024-03-04T13:57:12.951Z] [runtime-status] [2200] Functions runtime initialized. {"cwd":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions","node_version":"18.19.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\",\"node_version\":\"18.19.1\"}"}}
+[debug] [2024-03-04T13:57:12.952Z] [runtime-status] [2200] Listening to port: \\?\pipe\fire_emu_6a48ce8ece534d9b {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [2200] Listening to port: \\\\?\\pipe\\fire_emu_6a48ce8ece534d9b"}}
+[debug] [2024-03-04T13:57:13.051Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE"}}
+[debug] [2024-03-04T13:57:13.051Z] [worker-pool] submitRequest(triggerId=us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-createViewRoute)"}}
+[info] i  functions: Beginning execution of "us-central1-createViewRoute" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Beginning execution of \"us-central1-createViewRoute\""}}
+[debug] [2024-03-04T13:57:13.057Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: BUSY"}}
+[info] >  (node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  (Use `node --trace-warnings ...` to show where the warning was created) {"user":"(Use `node --trace-warnings ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-warnings ...` to show where the warning was created)"}}
+[info] >  (node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  Conexión exitosa a la base de datos {"user":"Conexión exitosa a la base de datos","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión exitosa a la base de datos"}}
+[debug] [2024-03-04T13:57:20.682Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-createViewRoute" in 7625.9622ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finished \"us-central1-createViewRoute\" in 7625.9622ms"}}
+[debug] [2024-03-04T13:57:20.689Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE"}}
+[debug] [2024-03-04T13:57:20.690Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-03-04T13:57:20.690Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-03-04T13:57:20.690Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] >  Conexión a la base de datos cerrada {"user":"Conexión a la base de datos cerrada","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión a la base de datos cerrada"}}
+[debug] [2024-03-04T14:00:14.560Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\config.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\config.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:15.566Z] Validating nodejs source
+[debug] [2024-03-04T14:00:25.817Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:00:25.819Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:00:25.820Z] Building nodejs source
+[debug] [2024-03-04T14:00:25.821Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:00:26.020Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:00:26.099Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8131
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:00:44.302Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\config.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\config.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.396Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Transaction.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Transaction.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.431Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Plan.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Plan.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.473Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\PlanController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\PlanController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.502Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\View.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\View.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.556Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Role.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Role.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.614Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\RoleController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\RoleController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.667Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ViewController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ViewController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.702Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\CV.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\CV.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.734Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Profile.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Profile.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.742Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\User.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\User.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.771Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\UserController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\UserController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.814Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\TransactionController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\TransactionController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.881Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Job.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Job.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.884Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\JobController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\JobController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.925Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.925Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ProfileController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ProfileController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.960Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.960Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\CVController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\CVController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:44.986Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\stripeController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\stripeController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:00:46.019Z] Validating nodejs source
+[debug] [2024-03-04T14:00:56.099Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:00:56.105Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:00:56.106Z] Building nodejs source
+[debug] [2024-03-04T14:00:56.106Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:00:56.119Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:00:56.187Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8590
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:03:34.360Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T14:03:34.360Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:03:34.361Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T14:03:34.360Z"],"workRunningCount":1}
+[debug] [2024-03-04T14:03:34.361Z] Accepted request POST /iqjobs-staging/us-central1/createViewRoute --> us-central1-createViewRoute
+[debug] [2024-03-04T14:03:34.367Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-03-04T14:03:34.367Z] [functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/"}}
+[debug] [2024-03-04T14:03:34.367Z] [worker-pool] submitRequest(triggerId=us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-createViewRoute)"}}
+[info] i  functions: Beginning execution of "us-central1-createViewRoute" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Beginning execution of \"us-central1-createViewRoute\""}}
+[debug] [2024-03-04T14:03:34.370Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: BUSY"}}
+[info] >  (node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:2200) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  (node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:2200) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  Conexión exitosa a la base de datos {"user":"Conexión exitosa a la base de datos","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión exitosa a la base de datos"}}
+[debug] [2024-03-04T14:03:40.577Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-createViewRoute" in 6207.3624ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finished \"us-central1-createViewRoute\" in 6207.3624ms"}}
+[debug] [2024-03-04T14:03:40.579Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: IDLE"}}
+[debug] [2024-03-04T14:03:40.579Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-03-04T14:03:40.580Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-03-04T14:03:40.580Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] >  Conexión a la base de datos cerrada {"user":"Conexión a la base de datos cerrada","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión a la base de datos cerrada"}}
+[debug] [2024-03-04T14:03:48.838Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ViewController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ViewController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:03:49.859Z] Validating nodejs source
+[debug] [2024-03-04T14:03:59.954Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:03:59.957Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:03:59.958Z] Building nodejs source
+[debug] [2024-03-04T14:03:59.958Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:04:00.024Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:04:00.144Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8250
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:16:26.441Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\config.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\config.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.470Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Transaction.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Transaction.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.499Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Plan.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Plan.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.524Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\PlanController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\PlanController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.547Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\View.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\View.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.611Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Role.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Role.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.663Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\RoleController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\RoleController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.729Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ViewController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ViewController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.758Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\CV.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\CV.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.850Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Profile.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Profile.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.877Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\User.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\User.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.896Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\UserController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\UserController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.927Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\TransactionController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\TransactionController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:26.956Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Job.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Job.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.001Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\JobController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\JobController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.021Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.046Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ProfileController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ProfileController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.102Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.125Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\CVController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\CVController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:27.142Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\stripeController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\stripeController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:16:28.159Z] Validating nodejs source
+[debug] [2024-03-04T14:16:38.076Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:16:38.077Z] Building nodejs source
+[debug] [2024-03-04T14:16:38.078Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:16:38.082Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:16:38.097Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8101
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[debug] [2024-03-04T14:16:46.524Z] Got response from /__/functions.yaml {"endpoints":{"createPlanRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createPlanRoute"},"getPlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getPlanByIdRoute"},"updatePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updatePlanByIdRoute"},"deletePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deletePlanByIdRoute"},"createRoleRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createRoleRoute"},"getRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getRoleByIdRoute"},"updateRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateRoleByIdRoute"},"deleteRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteRoleByIdRoute"},"createViewRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createViewRoute"},"getViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getViewByIdRoute"},"updateViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateViewByIdRoute"},"deleteViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteViewByIdRoute"},"createUserRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createUserRoute"},"getUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getUserByIdRoute"},"updateUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateUserByIdRoute"},"deleteUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteUserByIdRoute"},"createTransactionRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createTransactionRoute"},"getTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getTransactionByIdRoute"},"updateTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateTransactionByIdRoute"},"deleteTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteTransactionByIdRoute"},"createJobRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createJobRoute"},"getJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getJobByIdRoute"},"updateJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateJobByIdRoute"},"deleteJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteJobByIdRoute"},"createProfileRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createProfileRoute"},"getProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getProfileByIdRoute"},"updateProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateProfileByIdRoute"},"deleteProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteProfileByIdRoute"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute."}}
+[debug] [2024-03-04T14:16:46.648Z] [worker-pool] Shutting down IDLE worker (us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-createViewRoute)"}}
+[debug] [2024-03-04T14:16:46.648Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: FINISHING"}}
+[debug] [2024-03-04T14:16:46.708Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: exited"}}
+[debug] [2024-03-04T14:16:46.708Z] [worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-75ad91a5-a4e9-4ad8-a18c-3c48e42dbb13]: FINISHED"}}
+[debug] [2024-03-04T14:17:00.535Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T14:17:00.534Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:17:00.535Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/createViewRoute-2024-03-04T14:17:00.534Z"],"workRunningCount":1}
+[debug] [2024-03-04T14:17:00.536Z] Accepted request POST /iqjobs-staging/us-central1/createViewRoute --> us-central1-createViewRoute
+[debug] [2024-03-04T14:17:00.547Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-03-04T14:17:00.548Z] [functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/iqjobs-staging/us-central1/createViewRoute, mapping to path=/"}}
+[debug] [2024-03-04T14:17:00.549Z] [worker-pool] Cleaned up workers for us-central1-createViewRoute: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-createViewRoute: 1 --> 0"}}
+[debug] [2024-03-04T14:17:00.577Z] [worker-pool] addWorker(us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-createViewRoute)"}}
+[debug] [2024-03-04T14:17:00.579Z] [worker-pool] Adding worker with key us-central1-createViewRoute, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-createViewRoute, total=1"}}
+[debug] [2024-03-04T14:17:06.459Z] [runtime-status] [15372] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:06.468Z] [runtime-status] [15372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:06.469Z] [runtime-status] [15372] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-03-04T14:17:06.474Z] [runtime-status] [15372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:08.302Z] [runtime-status] [15372] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-03-04T14:17:08.302Z] [runtime-status] [15372] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2024-03-04T14:17:08.303Z] [runtime-status] [15372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:08.304Z] [runtime-status] [15372] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:08.310Z] [runtime-status] [15372] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:17:08.311Z] [runtime-status] [15372] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[info] >  Setting "Mixed" for property "ViewClass.route" {"user":"Setting \"Mixed\" for property \"ViewClass.route\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"ViewClass.route\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[info] >  Setting "Mixed" for property "JobClass.companies" {"user":"Setting \"Mixed\" for property \"JobClass.companies\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"JobClass.companies\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[debug] [2024-03-04T14:17:11.743Z] [runtime-status] [15372] Functions runtime initialized. {"cwd":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions","node_version":"18.19.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\",\"node_version\":\"18.19.1\"}"}}
+[debug] [2024-03-04T14:17:11.752Z] [runtime-status] [15372] Listening to port: \\?\pipe\fire_emu_a365c5a8c2f071f5 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[runtime-status] [15372] Listening to port: \\\\?\\pipe\\fire_emu_a365c5a8c2f071f5"}}
+[debug] [2024-03-04T14:17:11.820Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: IDLE"}}
+[debug] [2024-03-04T14:17:11.820Z] [worker-pool] submitRequest(triggerId=us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-createViewRoute)"}}
+[info] i  functions: Beginning execution of "us-central1-createViewRoute" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Beginning execution of \"us-central1-createViewRoute\""}}
+[debug] [2024-03-04T14:17:11.822Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: BUSY"}}
+[info] >  (node:15372) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:15372) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:15372) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  (Use `node --trace-warnings ...` to show where the warning was created) {"user":"(Use `node --trace-warnings ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-warnings ...` to show where the warning was created)"}}
+[info] >  (node:15372) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:15372) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:15372) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  Conexión exitosa a la base de datos {"user":"Conexión exitosa a la base de datos","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión exitosa a la base de datos"}}
+[debug] [2024-03-04T14:17:14.444Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-createViewRoute" in 2621.8545ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finished \"us-central1-createViewRoute\" in 2621.8545ms"}}
+[debug] [2024-03-04T14:17:14.446Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: IDLE"}}
+[debug] [2024-03-04T14:17:14.446Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-03-04T14:17:14.446Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-03-04T14:17:14.446Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] >  Conexión a la base de datos cerrada {"user":"Conexión a la base de datos cerrada","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión a la base de datos cerrada"}}
+[debug] [2024-03-04T14:18:35.610Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\UserController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\UserController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:18:35.675Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\CVController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\CVController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:18:36.864Z] Validating nodejs source
+[debug] [2024-03-04T14:18:47.182Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:18:47.187Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:18:47.187Z] Building nodejs source
+[debug] [2024-03-04T14:18:47.188Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:18:47.325Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:18:47.377Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8867
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:19:45.016Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/updateViewById-2024-03-04T14:19:45.016Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:19:45.017Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/updateViewById-2024-03-04T14:19:45.016Z"],"workRunningCount":1}
+[debug] [2024-03-04T14:19:45.019Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:20:09.048Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/getViewById-2024-03-04T14:20:09.048Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:20:09.049Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/getViewById-2024-03-04T14:20:09.048Z"],"workRunningCount":1}
+[debug] [2024-03-04T14:20:09.050Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:20:28.726Z] [work-queue] {"queuedWork":["/iqjobs-staging/us-central1/getViewByIdRoute-2024-03-04T14:20:28.726Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-03-04T14:20:28.726Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/iqjobs-staging/us-central1/getViewByIdRoute-2024-03-04T14:20:28.726Z"],"workRunningCount":1}
+[debug] [2024-03-04T14:20:28.727Z] Accepted request GET /iqjobs-staging/us-central1/getViewByIdRoute?id=65e5d7e99999988e581bfb4c --> us-central1-getViewByIdRoute
+[debug] [2024-03-04T14:20:28.734Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-03-04T14:20:28.735Z] [functions] Got req.url=/iqjobs-staging/us-central1/getViewByIdRoute?id=65e5d7e99999988e581bfb4c, mapping to path=/?id=65e5d7e99999988e581bfb4c {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/iqjobs-staging/us-central1/getViewByIdRoute?id=65e5d7e99999988e581bfb4c, mapping to path=/?id=65e5d7e99999988e581bfb4c"}}
+[debug] [2024-03-04T14:20:28.757Z] [worker-pool] addWorker(us-central1-getViewByIdRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-getViewByIdRoute)"}}
+[debug] [2024-03-04T14:20:28.758Z] [worker-pool] Adding worker with key us-central1-getViewByIdRoute, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-getViewByIdRoute, total=1"}}
+[debug] [2024-03-04T14:20:36.070Z] [runtime-status] [10280] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:36.077Z] [runtime-status] [10280] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:36.079Z] [runtime-status] [10280] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-03-04T14:20:36.084Z] [runtime-status] [10280] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:37.548Z] [runtime-status] [10280] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-03-04T14:20:37.550Z] [runtime-status] [10280] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2024-03-04T14:20:37.553Z] [runtime-status] [10280] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:37.557Z] [runtime-status] [10280] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:37.567Z] [runtime-status] [10280] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.7.0","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.7.0\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2024-03-04T14:20:37.568Z] [runtime-status] [10280] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[info] >  Setting "Mixed" for property "ViewClass.route" {"user":"Setting \"Mixed\" for property \"ViewClass.route\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"ViewClass.route\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[info] >  Setting "Mixed" for property "JobClass.companies" {"user":"Setting \"Mixed\" for property \"JobClass.companies\"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Setting \"Mixed\" for property \"JobClass.companies\""}}
+[info] >  Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed {"user":"Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed"}}
+[debug] [2024-03-04T14:20:39.807Z] [runtime-status] [10280] Functions runtime initialized. {"cwd":"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions","node_version":"18.19.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\contr\\\\OneDrive\\\\Documents\\\\GitHub\\\\IQJobs\\\\functions\",\"node_version\":\"18.19.1\"}"}}
+[debug] [2024-03-04T14:20:39.812Z] [runtime-status] [10280] Listening to port: \\?\pipe\fire_emu_27d29b21c3f77307 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[runtime-status] [10280] Listening to port: \\\\?\\pipe\\fire_emu_27d29b21c3f77307"}}
+[debug] [2024-03-04T14:20:39.885Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: IDLE"}}
+[debug] [2024-03-04T14:20:39.886Z] [worker-pool] submitRequest(triggerId=us-central1-getViewByIdRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-getViewByIdRoute)"}}
+[info] i  functions: Beginning execution of "us-central1-getViewByIdRoute" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"Beginning execution of \"us-central1-getViewByIdRoute\""}}
+[debug] [2024-03-04T14:20:39.887Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: BUSY"}}
+[info] >  (node:10280) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:10280) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:10280) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  (Use `node --trace-warnings ...` to show where the warning was created) {"user":"(Use `node --trace-warnings ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-warnings ...` to show where the warning was created)"}}
+[info] >  (node:10280) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version {"user":"(node:10280) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:10280) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version"}}
+[info] >  Conexión exitosa a la base de datos {"user":"Conexión exitosa a la base de datos","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión exitosa a la base de datos"}}
+[debug] [2024-03-04T14:20:42.295Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-getViewByIdRoute" in 2407.615ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"Finished \"us-central1-getViewByIdRoute\" in 2407.615ms"}}
+[debug] [2024-03-04T14:20:42.299Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: IDLE"}}
+[debug] [2024-03-04T14:20:42.300Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-03-04T14:20:42.300Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-03-04T14:20:42.300Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] >  Conexión a la base de datos cerrada {"user":"Conexión a la base de datos cerrada","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"\u001b[90m> \u001b[39m Conexión a la base de datos cerrada"}}
+[debug] [2024-03-04T14:27:01.941Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\PlanController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\PlanController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:27:03.242Z] Validating nodejs source
+[debug] [2024-03-04T14:27:13.487Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:27:13.489Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:27:13.490Z] Building nodejs source
+[debug] [2024-03-04T14:27:13.490Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:27:13.512Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:27:13.573Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8194
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:27:37.209Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\CVController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\CVController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:27:38.211Z] Validating nodejs source
+[debug] [2024-03-04T14:27:49.335Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:27:49.340Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:27:49.346Z] Building nodejs source
+[debug] [2024-03-04T14:27:49.346Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:27:49.474Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:27:49.564Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8097
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:28:36.751Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\JobController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\JobController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:28:37.765Z] Validating nodejs source
+[debug] [2024-03-04T14:28:48.551Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:28:48.623Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:28:48.624Z] Building nodejs source
+[debug] [2024-03-04T14:28:48.629Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:28:48.703Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:28:48.814Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8060
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:29:41.912Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\ProfileController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\ProfileController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:29:42.923Z] Validating nodejs source
+[debug] [2024-03-04T14:29:52.868Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:29:52.869Z] Building nodejs source
+[debug] [2024-03-04T14:29:52.870Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:29:52.877Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:29:52.894Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8946
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:30:46.898Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\RoleController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\RoleController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:30:47.972Z] Validating nodejs source
+[debug] [2024-03-04T14:30:57.523Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:30:57.524Z] Building nodejs source
+[debug] [2024-03-04T14:30:57.525Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:30:57.533Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:30:57.552Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8064
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[debug] [2024-03-04T14:31:05.712Z] Got response from /__/functions.yaml {"endpoints":{"createPlanRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createPlanRoute"},"getPlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getPlanByIdRoute"},"updatePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updatePlanByIdRoute"},"deletePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deletePlanByIdRoute"},"createRoleRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createRoleRoute"},"getRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getRoleByIdRoute"},"updateRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateRoleByIdRoute"},"deleteRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteRoleByIdRoute"},"createViewRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createViewRoute"},"getViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getViewByIdRoute"},"updateViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateViewByIdRoute"},"deleteViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteViewByIdRoute"},"createUserRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createUserRoute"},"getUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getUserByIdRoute"},"updateUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateUserByIdRoute"},"deleteUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteUserByIdRoute"},"createTransactionRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createTransactionRoute"},"getTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getTransactionByIdRoute"},"updateTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateTransactionByIdRoute"},"deleteTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteTransactionByIdRoute"},"createJobRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createJobRoute"},"getJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getJobByIdRoute"},"updateJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateJobByIdRoute"},"deleteJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteJobByIdRoute"},"createProfileRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createProfileRoute"},"getProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getProfileByIdRoute"},"updateProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateProfileByIdRoute"},"deleteProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteProfileByIdRoute"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute."}}
+[debug] [2024-03-04T14:31:05.799Z] [worker-pool] Shutting down IDLE worker (us-central1-createViewRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-createViewRoute)"}}
+[debug] [2024-03-04T14:31:05.799Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: FINISHING"}}
+[debug] [2024-03-04T14:31:05.799Z] [worker-pool] Shutting down IDLE worker (us-central1-getViewByIdRoute) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-getViewByIdRoute)"}}
+[debug] [2024-03-04T14:31:05.800Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: FINISHING"}}
+[debug] [2024-03-04T14:31:05.844Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: exited"}}
+[debug] [2024-03-04T14:31:05.844Z] [worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-getViewByIdRoute"},"extension":{},"message":"[worker-us-central1-getViewByIdRoute-aa7a609c-fb2e-4f81-b3c5-97c80ad4beb3]: FINISHED"}}
+[debug] [2024-03-04T14:31:05.899Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: exited"}}
+[debug] [2024-03-04T14:31:05.900Z] [worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-createViewRoute"},"extension":{},"message":"[worker-us-central1-createViewRoute-fe0fed6a-1bf8-4cf1-85ea-bc307d7f91f2]: FINISHED"}}
+[debug] [2024-03-04T14:31:34.102Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\TransactionController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\TransactionController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:31:35.106Z] Validating nodejs source
+[debug] [2024-03-04T14:31:45.150Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:31:45.151Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:31:45.152Z] Building nodejs source
+[debug] [2024-03-04T14:31:45.152Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:31:45.166Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:31:45.179Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8799
+
+[debug] [2024-03-04T14:31:54.322Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\TransactionController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\TransactionController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:31:55.341Z] Validating nodejs source
+[debug] [2024-03-04T14:32:05.467Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:32:05.470Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:32:05.470Z] Building nodejs source
+[debug] [2024-03-04T14:32:05.470Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:32:05.474Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:32:05.505Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:32:05.547Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\TransactionController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\TransactionController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:32:05.559Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\PlanController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\PlanController.ts changed, reloading triggers"}}
+[debug] [2024-03-04T14:32:06.631Z] Validating nodejs source
+[debug] [2024-03-04T14:32:16.851Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:32:16.852Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:32:16.853Z] Building nodejs source
+[debug] [2024-03-04T14:32:16.854Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:32:16.984Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:32:17.129Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8022
+
+[debug] [2024-03-04T14:32:17.344Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\controllers\UserController.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\controllers\\UserController.ts changed, reloading triggers"}}
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[debug] [2024-03-04T14:32:18.355Z] Validating nodejs source
+[debug] [2024-03-04T14:32:28.441Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:32:28.448Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:32:28.449Z] Building nodejs source
+[debug] [2024-03-04T14:32:28.449Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:32:28.458Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:32:28.471Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8339
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[info] Serving at port 8670
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[debug] [2024-03-04T14:32:35.209Z] Got response from /__/functions.yaml {"endpoints":{"createPlanRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createPlanRoute"},"getPlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getPlanByIdRoute"},"updatePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updatePlanByIdRoute"},"deletePlanByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deletePlanByIdRoute"},"createRoleRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createRoleRoute"},"getRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getRoleByIdRoute"},"updateRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateRoleByIdRoute"},"deleteRoleByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteRoleByIdRoute"},"createViewRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createViewRoute"},"getViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getViewByIdRoute"},"updateViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateViewByIdRoute"},"deleteViewByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteViewByIdRoute"},"createUserRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createUserRoute"},"getUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getUserByIdRoute"},"updateUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateUserByIdRoute"},"deleteUserByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteUserByIdRoute"},"createTransactionRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createTransactionRoute"},"getTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getTransactionByIdRoute"},"updateTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateTransactionByIdRoute"},"deleteTransactionByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteTransactionByIdRoute"},"createJobRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createJobRoute"},"getJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getJobByIdRoute"},"updateJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateJobByIdRoute"},"deleteJobByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteJobByIdRoute"},"createProfileRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"createProfileRoute"},"getProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getProfileByIdRoute"},"updateProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateProfileByIdRoute"},"deleteProfileByIdRoute":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"deleteProfileByIdRoute"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: createPlanRoute, getPlanByIdRoute, updatePlanByIdRoute, deletePlanByIdRoute, createRoleRoute, getRoleByIdRoute, updateRoleByIdRoute, deleteRoleByIdRoute, createViewRoute, getViewByIdRoute, updateViewByIdRoute, deleteViewByIdRoute, createUserRoute, getUserByIdRoute, updateUserByIdRoute, deleteUserByIdRoute, createTransactionRoute, getTransactionByIdRoute, updateTransactionByIdRoute, deleteTransactionByIdRoute, createJobRoute, getJobByIdRoute, updateJobByIdRoute, deleteJobByIdRoute, createProfileRoute, getProfileByIdRoute, updateProfileByIdRoute, deleteProfileByIdRoute."}}
+[debug] [2024-03-04T14:33:39.307Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\config.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\config.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.425Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Transaction.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Transaction.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.459Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Plan.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Plan.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.575Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\PlanController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\PlanController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.663Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\View.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\View.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.720Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\View.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\View.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.866Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Role.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Role.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.908Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\RoleController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\RoleController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:39.914Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ViewController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ViewController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.078Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\CV.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\CV.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.270Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Profile.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Profile.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.271Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\User.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\User.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.333Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\User.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\User.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.352Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\UserController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\UserController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.386Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\TransactionController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\TransactionController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.411Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Job.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Job.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.484Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\JobController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\JobController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.563Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.614Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\models\Index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\models\\Index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.801Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\ProfileController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\ProfileController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.935Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\index.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.953Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\CVController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\CVController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:40.967Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\lib\controllers\stripeController.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\lib\\controllers\\stripeController.js changed, reloading triggers"}}
+[debug] [2024-03-04T14:33:42.045Z] Validating nodejs source
+[debug] [2024-03-04T14:33:52.297Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-04T14:33:52.299Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "pino": "^8.18.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-04T14:33:52.300Z] Building nodejs source
+[debug] [2024-03-04T14:33:52.300Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-04T14:33:52.357Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-04T14:33:52.408Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8213
+
+[error] Setting "Mixed" for property "ViewClass.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "JobClass.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}

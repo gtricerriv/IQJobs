@@ -1,4 +1,5 @@
-import { CVModel, CVClass } from "../models/CV";
+import { CVModel } from "../models/CV";
+import { connectToDatabase, closeDatabaseConnection } from '../config';
 import { Request, Response } from "express";
 
 const handleResponse = (response: Response, statusCode: number, data: any) => {
@@ -7,16 +8,20 @@ const handleResponse = (response: Response, statusCode: number, data: any) => {
 
 export const createCV = async (request: Request, response: Response) => {
     try {
+        await connectToDatabase();
         const newCV = new CVModel(request.body);
         await newCV.save();
         handleResponse(response, 201, newCV);
     } catch (error: any) {
         handleResponse(response, 500, { error: error.message });
+    } finally {
+        await closeDatabaseConnection();
     }
 };
 
 export const getCVById = async (request: Request, response: Response) => {
     try {
+        await connectToDatabase();
         const cvId = request.query.id as string;
         const cv = await CVModel.findById(cvId);
         if (!cv) {
@@ -25,11 +30,14 @@ export const getCVById = async (request: Request, response: Response) => {
         handleResponse(response, 200, cv);
     } catch (error: any) {
         handleResponse(response, 500, { error: error.message });
+    } finally {
+        await closeDatabaseConnection();
     }
 };
 
 export const updateCVById = async (request: Request, response: Response) => {
     try {
+        await connectToDatabase();
         const cvId = request.query.id as string;
         const updatedCV = await CVModel.findByIdAndUpdate(cvId, request.body, { new: true });
         if (!updatedCV) {
@@ -38,11 +46,14 @@ export const updateCVById = async (request: Request, response: Response) => {
         handleResponse(response, 200, updatedCV);
     } catch (error: any) {
         handleResponse(response, 500, { error: error.message });
+    } finally {
+        await closeDatabaseConnection();
     }
 };
 
 export const deleteCVById = async (request: Request, response: Response) => {
     try {
+        await connectToDatabase();
         const cvId = request.query.id as string;
         const deletedCV = await CVModel.findByIdAndDelete(cvId);
         if (!deletedCV) {
@@ -51,5 +62,7 @@ export const deleteCVById = async (request: Request, response: Response) => {
         handleResponse(response, 200, deletedCV);
     } catch (error: any) {
         handleResponse(response, 500, { error: error.message });
+    } finally {
+        await closeDatabaseConnection();
     }
 };

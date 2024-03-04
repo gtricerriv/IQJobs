@@ -1,27 +1,23 @@
-export const dbConfig = {
-  uri: 'mongodb://localhost:27017',
-  serverApi: {
-    strict: true,
-    deprecationErrors: true,
-  }
-};
-
 import mongoose from 'mongoose';
 
-// URL de conexión a tu base de datos MongoDB
-const mongoURI = 'mongodb://localhost:27017';
-
-const connectDB = async () => {
+// Define una función para conectar y desconectar con la base de datos
+const connectToDatabase = async (): Promise<void> => {
     try {
-        await mongoose.connect(mongoURI, {
-            //@ts-ignore
+        await mongoose.connect("mongodb+srv://Rf9suobng6:Rf9suobng6@cluster0.knj1mbl.mongodb.net/iqjobs", {
+          //@ts-ignore
             useNewUrlParser: true,
-            useUnifiedTopology: true,
+            useUnifiedTopology: true
         });
-        console.log('Conexión exitosa a MongoDB');
-    } catch (err) {
-        console.error('Error al conectar a MongoDB:', err);
+        console.log("Conexión exitosa a la base de datos");
+    } catch (error:any) {
+        console.error('Error al conectar con la base de datos:', error.message);
     }
 };
 
-export default connectDB;
+const closeDatabaseConnection = async (): Promise<void> => {
+    await mongoose.disconnect();
+    console.log("Conexión a la base de datos cerrada");
+};
+
+// Exporta los modelos y las funciones de conexión
+export { connectToDatabase, closeDatabaseConnection };

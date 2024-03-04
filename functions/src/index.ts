@@ -6,10 +6,9 @@ import { createUser, getUserById, deleteUserById, updateUserById } from "./contr
 import { createTransaction, getTransactionById, deleteTransactionById, updateTransactionById } from "./controllers/TransactionController";
 import { createJob, getJobById, updateJobById, deleteJobById } from "./controllers/JobController";
 import { createProfile, getProfileById, updateProfileById, deleteProfileById } from "./controllers/ProfileController";
-//import connectDB from "./config";
-import { createSubscription } from './controllers/stripeController';
 
-//connectDB();
+//import { createSubscription } from './controllers/stripeController';
+
 // Rutas para el modelo Plan
 export const createPlanRoute = onRequest(createPlan);
 export const getPlanByIdRoute = onRequest(getPlanById);
@@ -53,4 +52,4 @@ export const updateProfileByIdRoute = onRequest(updateProfileById);
 export const deleteProfileByIdRoute = onRequest(deleteProfileById);
 
 // Rutas para el modelo createSubscription
-export const createSubscriptionRoute = onRequest(createSubscription);
+//export const createSubscriptionRoute = onRequest(createSubscription);
