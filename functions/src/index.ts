@@ -6,7 +6,8 @@ import { createUser, getUserById, deleteUserById, updateUserById } from "./contr
 import { createTransaction, getTransactionById, deleteTransactionById, updateTransactionById } from "./controllers/TransactionController";
 import { createJob, getJobById, updateJobById, deleteJobById } from "./controllers/JobController";
 import { createProfile, getProfileById, updateProfileById, deleteProfileById } from "./controllers/ProfileController";
-
+import { getJobTips, getResumeRecommendations } from './controllers/TipsController';
+import { getJobDetails } from './controllers/crawlerController';
 //import { createSubscription } from './controllers/stripeController';
 
 // Rutas para el modelo Plan
@@ -51,5 +52,11 @@ export const getProfileByIdRoute = onRequest(getProfileById);
 export const updateProfileByIdRoute = onRequest(updateProfileById);
 export const deleteProfileByIdRoute = onRequest(deleteProfileById);
 
+// Rutas para los Tips
+export const tipsToProfiles = onRequest(getResumeRecommendations);
+export const tipsToJobs = onRequest(getJobTips);
+
+// Rutas para Crawler
+export const getJobDetailsRoute = onRequest(getJobDetails);
 // Rutas para el modelo createSubscription
 //export const createSubscriptionRoute = onRequest(createSubscription);
