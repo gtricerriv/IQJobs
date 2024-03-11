@@ -1,19 +1,13 @@
 <template>
-  <div class="q-pa-xl justify-center" style="width:100%;">
-    <q-scroll-area
-      :thumb-style="thumbStyle"
-      :bar-style="barStyle"
-      style="height: 80vh;"
-    >
-      <div class="q-pa-md" v-for="(job, index) in paginatedJobs" :key="index">
-        <ArticleComponent
-          :description="job.description.value"
-          :position="job.position.value"
-          :provider="job.provider.value"
-          :title="job.title.value"
-        />
-      </div>
-   </q-scroll-area>
+  <div class="q-pa-xl q-gutter-lg" style="width: 100%">
+    <div v-for="(job, index) in paginatedJobs" :key="index">
+      <ArticleComponent
+        :description="job.description"
+        :position="job.position"
+        :provider="job.provider ? job.provider : ''"
+        :title="job.title"
+      />
+    </div>
     <q-pagination
       class="flex-center"
       v-model="current"
@@ -22,112 +16,11 @@
     />
   </div>
 </template>
-<style>
-.q-scrollarea__content absolute{
-  gutter: 50px;
-}
-</style>
+
 <script>
 import ArticleComponent from 'components/ArticleComponent.vue';
-import { computed, defineComponent, ref } from 'vue';
-const jobs = [
-  {
-    title: ref('Software Engineer'),
-    description: ref('Develop and maintain software applications'),
-    position: ref('Full-time'),
-    provider: ref('Tech Solutions Inc.')
-  },
-  {
-    title: ref('Data Scientist'),
-    description: ref('Analyze and interpret complex data sets'),
-    position: ref('Remote'),
-    provider: ref('Data Analytics Corp')
-  },
-  {
-    title: ref('Cybersecurity Analyst'),
-    description: ref('Protect systems and networks from cyber threats'),
-    position: ref('Contract'),
-    provider: ref('SecureTech Solutions')
-  },
-  {
-    title: ref('UI/UX Designer'),
-    description: ref('Create intuitive user interfaces and interactions'),
-    position: ref('Part-time'),
-    provider: ref('Design Innovations Lab')
-  },
-  {
-    title: ref('IT Project Manager'),
-    description: ref('Oversee technology projects from initiation to completion'),
-    position: ref('Full-time'),
-    provider: ref('Tech Projects International')
-  },
-  {
-    title: ref('Machine Learning Engineer'),
-    description: ref('Design and implement machine learning algorithms'),
-    position: ref('Full-time'),
-    provider: ref('AI Innovations Co.')
-  },
-  {
-    title: ref('Cloud Solutions Architect'),
-    description: ref('Design and implement cloud computing solutions'),
-    position: ref('Remote'),
-    provider: ref('CloudTech Enterprises')
-  },
-  {
-    title: ref('Systems Administrator'),
-    description: ref('Manage and optimize IT systems for efficiency'),
-    position: ref('Full-time'),
-    provider: ref('System Admin Solutions')
-  },
-  {
-    title: ref('Software Engineer'),
-    description: ref('Develop and maintain software applications'),
-    position: ref('Full-time'),
-    provider: ref('Tech Solutions Inc.')
-  },
-  {
-    title: ref('Data Scientist'),
-    description: ref('Analyze and interpret complex data sets'),
-    position: ref('Remote'),
-    provider: ref('Data Analytics Corp')
-  },
-  {
-    title: ref('Cybersecurity Analyst'),
-    description: ref('Protect systems and networks from cyber threats'),
-    position: ref('Contract'),
-    provider: ref('SecureTech Solutions')
-  },
-  {
-    title: ref('UI/UX Designer'),
-    description: ref('Create intuitive user interfaces and interactions'),
-    position: ref('Part-time'),
-    provider: ref('Design Innovations Lab')
-  },
-  {
-    title: ref('IT Project Manager'),
-    description: ref('Oversee technology projects from initiation to completion'),
-    position: ref('Full-time'),
-    provider: ref('Tech Projects International')
-  },
-  {
-    title: ref('Machine Learning Engineer'),
-    description: ref('Design and implement machine learning algorithms'),
-    position: ref('Full-time'),
-    provider: ref('AI Innovations Co.')
-  },
-  {
-    title: ref('Cloud Solutions Architect'),
-    description: ref('Design and implement cloud computing solutions'),
-    position: ref('Remote'),
-    provider: ref('CloudTech Enterprises')
-  },
-  {
-    title: ref('Systems Administrator'),
-    description: ref('Manage and optimize IT systems for efficiency'),
-    position: ref('Full-time'),
-    provider: ref('System Admin Solutions')
-  }
-]
+import { useJobsStore } from 'stores/jobs'; // Ajusta la ruta de importación según la estructura de tu proyecto
+import { computed, defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'JobComponent',
@@ -135,36 +28,33 @@ export default defineComponent({
     ArticleComponent,
   },
   setup() {
+    const jobsStore = useJobsStore();
     const current = ref(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 199;
+
+    const fetchJobs = async () => {
+      try {
+        await jobsStore.fetchJobList(current.value, itemsPerPage);
+      } catch (error) {
+        console.error(error);
+        // Manejar el error según sea necesario
+      }
+    };
 
     const paginatedJobs = computed(() => {
-      const start = (current.value - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      return jobs.slice(start, end);
+      const start = (current.value - 1) * 6;
+      const end = start + 6;
+      return jobsStore.jobList.slice(start, end);
     });
 
-    const totalPages = computed(() => Math.ceil(jobs.length / itemsPerPage));
+    const totalPages = computed(() => Math.ceil(jobsStore.jobList.length / 6));
+
+    onMounted(fetchJobs); // Llama a fetchJobs cuando el componente se monta
 
     return {
       current,
       paginatedJobs,
       totalPages,
-      thumbStyle: {
-        right: '4px',
-        borderRadius: '5px',
-        backgroundColor: '#027be3',
-        width: '5px',
-        opacity: 0.75
-      },
-
-      barStyle: {
-        right: '2px',
-        borderRadius: '9px',
-        backgroundColor: '#027be3',
-        width: '9px',
-        opacity: 0.2
-      }
     };
   },
 });

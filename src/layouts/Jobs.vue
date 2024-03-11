@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-xl q-gutter-lg" style="width:100%;">
+  <div class="q-pa-xl q-gutter-lg" style="width: 100%">
     <div v-for="(job, index) in paginatedJobs" :key="index">
       <ArticleComponent
         :description="job.description.value"
@@ -16,107 +16,11 @@
     />
   </div>
 </template>
+s
 <script>
 import ArticleComponent from 'components/ArticleComponent.vue';
+import { useStore } from 'stores/index';
 import { computed, defineComponent, ref } from 'vue';
-const jobs = [
-  {
-    title: ref('Software Engineer'),
-    description: ref('Develop and maintain software applications'),
-    position: ref('Full-time'),
-    provider: ref('Tech Solutions Inc.')
-  },
-  {
-    title: ref('Data Scientist'),
-    description: ref('Analyze and interpret complex data sets'),
-    position: ref('Remote'),
-    provider: ref('Data Analytics Corp')
-  },
-  {
-    title: ref('Cybersecurity Analyst'),
-    description: ref('Protect systems and networks from cyber threats'),
-    position: ref('Contract'),
-    provider: ref('SecureTech Solutions')
-  },
-  {
-    title: ref('UI/UX Designer'),
-    description: ref('Create intuitive user interfaces and interactions'),
-    position: ref('Part-time'),
-    provider: ref('Design Innovations Lab')
-  },
-  {
-    title: ref('IT Project Manager'),
-    description: ref('Oversee technology projects from initiation to completion'),
-    position: ref('Full-time'),
-    provider: ref('Tech Projects International')
-  },
-  {
-    title: ref('Machine Learning Engineer'),
-    description: ref('Design and implement machine learning algorithms'),
-    position: ref('Full-time'),
-    provider: ref('AI Innovations Co.')
-  },
-  {
-    title: ref('Cloud Solutions Architect'),
-    description: ref('Design and implement cloud computing solutions'),
-    position: ref('Remote'),
-    provider: ref('CloudTech Enterprises')
-  },
-  {
-    title: ref('Systems Administrator'),
-    description: ref('Manage and optimize IT systems for efficiency'),
-    position: ref('Full-time'),
-    provider: ref('System Admin Solutions')
-  },
-  {
-    title: ref('Software Engineer'),
-    description: ref('Develop and maintain software applications'),
-    position: ref('Full-time'),
-    provider: ref('Tech Solutions Inc.')
-  },
-  {
-    title: ref('Data Scientist'),
-    description: ref('Analyze and interpret complex data sets'),
-    position: ref('Remote'),
-    provider: ref('Data Analytics Corp')
-  },
-  {
-    title: ref('Cybersecurity Analyst'),
-    description: ref('Protect systems and networks from cyber threats'),
-    position: ref('Contract'),
-    provider: ref('SecureTech Solutions')
-  },
-  {
-    title: ref('UI/UX Designer'),
-    description: ref('Create intuitive user interfaces and interactions'),
-    position: ref('Part-time'),
-    provider: ref('Design Innovations Lab')
-  },
-  {
-    title: ref('IT Project Manager'),
-    description: ref('Oversee technology projects from initiation to completion'),
-    position: ref('Full-time'),
-    provider: ref('Tech Projects International')
-  },
-  {
-    title: ref('Machine Learning Engineer'),
-    description: ref('Design and implement machine learning algorithms'),
-    position: ref('Full-time'),
-    provider: ref('AI Innovations Co.')
-  },
-  {
-    title: ref('Cloud Solutions Architect'),
-    description: ref('Design and implement cloud computing solutions'),
-    position: ref('Remote'),
-    provider: ref('CloudTech Enterprises')
-  },
-  {
-    title: ref('Systems Administrator'),
-    description: ref('Manage and optimize IT systems for efficiency'),
-    position: ref('Full-time'),
-    provider: ref('System Admin Solutions')
-  }
-]
 
 export default defineComponent({
   name: 'JobComponent',
@@ -124,21 +28,39 @@ export default defineComponent({
     ArticleComponent,
   },
   setup() {
+    const store = useStore();
+
+    const fetchJobs = async () => {
+      try {
+        const jobs = await store.$fetchJobs(1, 10); // Ejemplo de llamada para obtener la primera página con 10 trabajos
+        console.log(jobs);
+      } catch (error) {
+        console.error(error);
+        // Manejar el error según sea necesario
+      }
+    };
+
     const current = ref(1);
     const itemsPerPage = 6;
 
     const paginatedJobs = computed(() => {
       const start = (current.value - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      return jobs.slice(start, end);
+      const result = store.$fetchJobs(1, 10);
+      return result;
     });
 
-    const totalPages = computed(() => Math.ceil(jobs.length / itemsPerPage));
+    const totalPages = computed(() =>
+      Math.ceil(store.jobs.length / itemsPerPage)
+    );
+
+    fetchJobs(); // Llamada inicial para obtener los trabajos al cargar el componente
 
     return {
+      fetchJobs,
       current,
       paginatedJobs,
-      totalPages
+      totalPages,
     };
   },
 });
