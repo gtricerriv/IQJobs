@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHr lpR fFr">
     <q-header class="q-pa-md" elevated>
       <q-toolbar>
         <q-btn
@@ -23,8 +23,8 @@
           flat
           dense
           round
-          icon="menu"
-          aria-label="Menu"
+          icon="build_circle"
+          aria-label="build_circle"
           @click="toggleRightDrawer"
         />
         <q-btn-dropdown flat color="" icon="account_circle">
@@ -66,12 +66,12 @@
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <iframe
-        class="fit"
-        title="W3Schools Free Online Web Tutorials"
-        src="/widget-jobs"
-        frameborder="0"
-      ></iframe>
+      <WidgetComponent
+        :description="widgetStore.widgetData.description"
+        :position="widgetStore.widgetData.position"
+        :provider="widgetStore.widgetData.provider"
+        :title="widgetStore.widgetData.title"
+      />
       <div class="absolute-bottom">
         <q-btn color="primary" class="fit" label="Aceptar Oferta" />
       </div>
@@ -83,13 +83,21 @@
     </q-page-container>
   </q-layout>
 </template>
-
+<style>
+@media screen and (max-width: 767px) {
+  .q-drawer--right {
+    width: 80% !important;
+  }
+}
+</style>
 <script lang="ts">
 import { defineComponent, ref, beforeUnmount } from 'vue';
 import MenuComponent from 'components/Menu.vue';
 import SearchBar from 'components/SearchBar.vue';
+import WidgetComponent from 'pages/Widget.vue';
 import { useAuth0 } from '@auth0/auth0-vue';
 import { useRouter } from 'vue-router';
+import { useWidgetStore } from 'stores/widget';
 
 const menuAdmin = [
   { title: 'Users', icon: 'people', color: 'red' },
@@ -103,10 +111,13 @@ export default defineComponent({
   components: {
     SearchBar,
     MenuComponent,
+    WidgetComponent,
   },
 
   setup() {
     const router = useRouter();
+    const widgetStore = useWidgetStore();
+    console.log(widgetStore.widgetData, 'test');
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(true);
@@ -139,6 +150,7 @@ export default defineComponent({
       toggleLeftDrawer,
       toggleRightDrawer,
       login,
+      widgetStore,
       user,
       recruiter: ref(false),
       loginOrLogout,

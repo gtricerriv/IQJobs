@@ -1,5 +1,8 @@
 <template>
-  <div class="onPress q-pa-md bg-s shadow-4 bg-grey-1">
+  <div
+    @click="updateWidget(props)"
+    class="onPress q-pa-md bg-s shadow-4 bg-grey-1"
+  >
     <div class="row">
       <div class="col-3 text-start">
         <q-icon color="grey" size="xl" name="newspaper" />
@@ -17,7 +20,9 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useQuasar } from 'quasar';
+import { useWidgetStore } from 'stores/widget';
 
+const widgetStore = useWidgetStore();
 export default defineComponent({
   name: 'ArticleComponent',
   props: {
@@ -60,7 +65,15 @@ export default defineComponent({
       // Tu lógica de confirmación aquí
     };
 
-    return { redirect, confirm, cleanDescription };
+    return {
+      redirect,
+      confirm,
+      props,
+      cleanDescription,
+      updateWidget(props) {
+        widgetStore.updateWidgetData(props);
+      },
+    };
   },
 });
 </script>
