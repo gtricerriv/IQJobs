@@ -41,6 +41,8 @@ class Profile extends TimeStamps {
 
   @prop({ default: false })
   public isRecruiter!: boolean;
+  @prop({default: false})
+  public premium!: boolean;
 
   @prop({ ref: () => CVModel })
   // @ts-ignore

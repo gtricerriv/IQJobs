@@ -89,7 +89,10 @@ export const deleteViewByIdRoute = onRequest(deleteViewById);
 // Rutas para el modelo User
 export const createUserRoute = onRequest(createUser);
 export const getUserByIdRoute = onRequest(getUserById);
-export const getUserByAuth0Route = onRequest(getUserByAuth0);
+export const getUserByAuth0Route = onRequest((req:any, res:any)=>{
+  handleCors(req, res);
+  getUserByAuth0(req, res);
+});
 export const updateUserByIdRoute = onRequest(updateUserById);
 export const deleteUserByIdRoute = onRequest(deleteUserById);
 

@@ -16,7 +16,7 @@ export const useUserStore = defineStore('counter', {
   actions: {
     async fetchUserData(userId:string) {
       try {
-        const response = await axios.get(`http://127.0.0.1:5001/iqjobs-staging/us-central1/getUserByAuth0Route?id=${userId}`);
+        const response = await axios.get(`https://getuserbyauth0route-7mlffi3t2a-uc.a.run.app?id=${userId}`);
         this.userData = response.data; // Almacena los datos del usuario en el state userData
 
         // Accede al store de profile y actualiza los datos del usuario

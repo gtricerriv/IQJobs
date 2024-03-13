@@ -1,0 +1,197 @@
+[debug] [2024-03-13T20:10:41.205Z] ----------------------------------------------------------------------
+[debug] [2024-03-13T20:10:41.210Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-03-13T20:10:41.212Z] CLI Version:   13.4.0
+[debug] [2024-03-13T20:10:41.212Z] Platform:      win32
+[debug] [2024-03-13T20:10:41.213Z] Node Version:  v18.19.1
+[debug] [2024-03-13T20:10:41.239Z] Time:          Wed Mar 13 2024 16:10:41 GMT-0400 (Venezuela Time)
+[debug] [2024-03-13T20:10:41.239Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-13T20:10:41.922Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-13T20:10:41.923Z] > authorizing via signed-in user (3xerries@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2024-03-13T20:10:42.025Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-13T20:10:42.026Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-13T20:10:42.027Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-13T20:10:42.047Z] [hub] writing locator at C:\Users\contr\AppData\Local\Temp\hub-iqjobs-staging.json
+[debug] [2024-03-13T20:10:42.274Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-13T20:10:42.275Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-13T20:10:42.276Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-13T20:10:42.320Z] defaultcredentials: writing to file C:\Users\contr\AppData\Roaming\firebase\3xerries_gmail_com_application_default_credentials.json
+[debug] [2024-03-13T20:10:42.373Z] Setting GAC to C:\Users\contr\AppData\Roaming\firebase\3xerries_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\contr\\AppData\\Roaming\\firebase\\3xerries_gmail_com_application_default_credentials.json"}}
+[debug] [2024-03-13T20:10:42.379Z] > refreshing access token with scopes: []
+[debug] [2024-03-13T20:10:42.388Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-13T20:10:42.388Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-13T20:10:42.669Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-13T20:10:42.669Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-13T20:10:44.618Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig [none]
+[debug] [2024-03-13T20:10:45.208Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig 200
+[debug] [2024-03-13T20:10:45.209Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/adminSdkConfig {"projectId":"iqjobs-staging","storageBucket":"iqjobs-staging.appspot.com"}
+[debug] [2024-03-13T20:10:45.247Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites 
+[debug] [2024-03-13T20:10:46.130Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites 200
+[debug] [2024-03-13T20:10:46.130Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/iqjobs-staging/sites {"sites":[{"name":"projects/iqjobs-staging/sites/iqjobs-staging","defaultUrl":"https://iqjobs-staging.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-13T20:10:46.131Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config [none]
+[debug] [2024-03-13T20:10:46.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config 200
+[debug] [2024-03-13T20:10:46.631Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging/webApps/-/config {"projectId":"iqjobs-staging","storageBucket":"iqjobs-staging.appspot.com","apiKey":"AIzaSyBPaTMd1oJHpxVuRfpOF4GHPtlPUOO1wMc","authDomain":"iqjobs-staging.firebaseapp.com","messagingSenderId":"436720822443"}
+[debug] [2024-03-13T20:10:46.642Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging [none]
+[debug] [2024-03-13T20:10:47.053Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging 200
+[debug] [2024-03-13T20:10:47.053Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iqjobs-staging {"projectId":"iqjobs-staging","projectNumber":"436720822443","displayName":"Iqjobs-dev","name":"projects/iqjobs-staging","resources":{"hostingSite":"iqjobs-staging"},"state":"ACTIVE","etag":"1_28c46c1e-86ce-491b-916f-fa696c11eecb"}
+[info] i  hosting[iqjobs-staging]: Serving hosting files from: dist/spa {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist/spa\u001b[22m"}}
+[info] +  hosting[iqjobs-staging]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-03-13T20:10:47.508Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-13T20:10:47.508Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-13T20:10:47.509Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\contr\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\contr\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-13T20:10:49.669Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-13T20:10:49.670Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\" for Cloud Functions..."}}
+[debug] [2024-03-13T20:10:49.867Z] Validating nodejs source
+[debug] [2024-03-13T20:11:00.468Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+    at async FunctionsEmulator.connect (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:262:13)
+    at async Object.startAll (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\controller.js:566:13)
+[debug] [2024-03-13T20:11:00.470Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "openai": "^4.28.4",
+    "pino": "^8.18.0",
+    "puppeteer": "^22.3.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-13T20:11:00.471Z] Building nodejs source
+[debug] [2024-03-13T20:11:00.472Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-13T20:11:00.641Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-13T20:11:00.669Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[debug] [2024-03-13T20:11:11.040Z] Failed to call quitquitquit. This often means the server failed to start request to http://localhost:8508/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8508 {"message":"request to http://localhost:8508/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8508","type":"system","errno":"ECONNREFUSED","code":"ECONNREFUSED"}
+[info] Serving at port 8508
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-03-13T21:02:36.396Z] File C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\src\models\Profile.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\contr\\OneDrive\\Documents\\GitHub\\IQJobs\\functions\\src\\models\\Profile.ts changed, reloading triggers"}}
+[debug] [2024-03-13T21:02:37.479Z] Validating nodejs source
+[debug] [2024-03-13T21:02:47.557Z] checkFunctionsSDKVersion was unable to fetch information from NPM Error: spawnSync C:\Windows\system32\cmd.exe ETIMEDOUT
+    at Object.spawnSync (node:internal/child_process:1117:20)
+    at Object.spawnSync (node:child_process:876:24)
+    at Function.spawnSync [as sync] (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\node_modules\cross-spawn\index.js:26:23)
+    at Object.getLatestSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:54:25)
+    at Object.checkFunctionsSDKVersion (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js:74:32)
+    at Delegate.validate (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js:84:20)
+    at FunctionsEmulator.discoverTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:296:35)
+    at async FunctionsEmulator.loadTriggers (C:\Users\contr\AppData\Roaming\nvm\v18.19.1\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:325:34)
+[debug] [2024-03-13T21:02:47.576Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^12.2.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "openai": "^4.28.4",
+    "pino": "^8.18.0",
+    "puppeteer": "^22.3.0",
+    "stripe": "^14.19.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.8",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2024-03-13T21:02:47.577Z] Building nodejs source
+[debug] [2024-03-13T21:02:47.578Z] Failed to find version of module node: reached end of search path C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2024-03-13T21:02:47.585Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-13T21:02:47.615Z] Found firebase-functions binary at 'C:\Users\contr\OneDrive\Documents\GitHub\IQJobs\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8912
+
+[error] Setting "Mixed" for property "View.route"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] Setting "Mixed" for property "Job.companies"
+Look here for how to disable this message: https://typegoose.github.io/typegoose/docs/api/decorators/model-options/#allowmixed
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
