@@ -30,64 +30,35 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-
+import { ref, onMounted } from 'vue';
+import { useProfileStore } from '../stores/profile';
 const columns = [
-  { name: 'name', align: 'center', label: 'Name', field: 'name', sortable: true },
-  { name: 'area', label: 'area', field: 'area', sortable: true },
-  { name: 'createdAt', label: 'created', align: 'center', 'field': 'createdAt', sortable: true }
-]
-
-const originalRows = [
-  {
-    name: 'Giancarlo Profile Standard',
-    area: 'FrontEnd Developer',
-    createdAt: '2022-05-02'
-  },
-  {
-    name: 'Maria Profile Pro',
-    area: 'Full Stack Developer',
-    createdAt: '2021-11-15'
-  },
-  {
-    name: 'John Doe',
-    area: 'UI/UX Designer',
-    createdAt: '2023-01-30'
-  },
-  {
-    name: 'Elena Rodriguez',
-    area: 'Data Scientist',
-    createdAt: '2022-08-20'
-  },
-  {
-    name: 'Samuel Lee',
-    area: 'Mobile App Developer',
-    createdAt: '2022-02-10'
-  },
-  {
-    name: 'Sophie Johnson',
-    area: 'Digital Marketing Specialist',
-    createdAt: '2021-09-05'
-  },
-  {
-    name: 'Alexandra Smith',
-    area: 'Project Manager',
-    createdAt: '2023-03-18'
-  },
-  {
-    name: 'Michael Brown',
-    area: 'Software Engineer',
-    createdAt: '2021-06-12'
-  }
+  { name: 'name', align: 'center', label: 'Name', field: 'title', sortable: true },
+  { name: 'area', label: 'Area', field: 'area', sortable: true },
+  { name: 'createdAt', label: 'Created At', align: 'center', field: 'createdAt', sortable: true }
 ]
 
 export default {
   setup() {
-    const loading = ref(false)
-    const filter = ref('')
-    const rowCount = ref(10)
-    const rows = ref([...originalRows])
+    const loading = ref(false);
+    const filter = ref('');
+    const rows = ref([]);
     const selected = ref([]);
+
+    const profileStore = useProfileStore(); // Accede a la store de 'profile'
+
+    onMounted(async () => {
+      setTimeout( async ()=>{
+        loading.value = true;
+        try {
+          rows.value = await profileStore.profiles; // Obtiene los perfiles de la store y los asigna a 'rows'
+        } catch (error) {
+          console.error(error);
+        } finally {
+          loading.value = false;
+        }
+      },4000)
+    });
 
     return {
       selected,
@@ -95,38 +66,20 @@ export default {
       rows,
       loading,
       filter,
-      rowCount,
-
-      addRow() {
-        loading.value = true
-        setTimeout(() => {
-          const index = Math.floor(Math.random() * (rows.value.length + 1))
-          const row = originalRows[Math.floor(Math.random() * originalRows.length)]
-
-          if (rows.value.length === 0) {
-            rowCount.value = 0
-          }
-
-          row.id = ++rowCount.value
-          const newRow = { ...row }
-          rows.value = [...rows.value.slice(0, index), newRow, ...rows.value.slice(index)]
-          loading.value = false
-        }, 500)
-      },
 
       removeRow() {
-        loading.value = true
+        loading.value = true;
         setTimeout(() => {
           if (selected.value.length > 0) {
             selected.value.forEach(s => {
-              const index = rows.value.findIndex(row => row.name === s.name)
-              rows.value.splice(index, 1)
-            })
+              const index = rows.value.findIndex(row => row.name === s.name);
+              rows.value.splice(index, 1);
+            });
           }
-          loading.value = false
-        }, 500)
+          loading.value = false;
+        }, 500);
       }
-    }
+    };
   }
 }
 </script>

@@ -1,17 +1,22 @@
-import { prop, getModelForClass, Ref, modelOptions } from '@typegoose/typegoose';
+import {
+  prop,
+  getModelForClass,
+  Ref,
+  modelOptions,
+} from '@typegoose/typegoose';
 import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
-import { Transaction } from './Transaction';
+import { Transactions } from './Transaction';
 
-const { TransactionModel, TransactionClass } = Transaction;
+const { TransactionModel, Transaction } = Transactions;
 
 @modelOptions({ schemaOptions: { id: false } })
-class PlanClass extends TimeStamps {
-    @prop({ ref: () => TransactionClass })
-    //@ts-ignore
-    public transactions!: Ref<TransactionClass>[];
+class Plan extends TimeStamps {
+  @prop({ ref: () => Transaction })
+  //@ts-ignore
+  public transactions!: Ref<Transaction>[];
 }
 
-const PlanModel = getModelForClass(PlanClass);
+const PlanModel = getModelForClass(Plan);
 
-export const Plan = { PlanModel, PlanClass };
-export { PlanModel, PlanClass }
+export const Plans = { PlanModel, Plan };
+export { PlanModel, Plan };

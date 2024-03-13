@@ -1,74 +1,103 @@
-import { onRequest } from "firebase-functions/v2/https";
-import { UserModel } from "../models/User";
-import { ProfileModel } from "../models/Profile";
-import { closeDatabaseConnection,connectToDatabase } from '../config';
+import { onRequest } from 'firebase-functions/v2/https';
+import { UserModel } from '../models/User';
+import { ProfileModel } from '../models/Profile';
+import { closeDatabaseConnection, connectToDatabase } from '../config';
+import { JobModel } from '../models/Job';
 
 // Función para crear un usuario
 export const createUser = onRequest(async (request, response) => {
-    try {
-        await connectToDatabase();
-        const userData = request.body;
-        const newUser = new UserModel(userData);
-        await newUser.save();
-        response.status(201).json(newUser);
-    } catch (error: any) {
-        response.status(500).json({ error: error.message });
-    } finally {
-        await closeDatabaseConnection();
-    }
+  try {
+    await connectToDatabase();
+    const userData = request.body;
+    const newUser = new UserModel(userData);
+    await newUser.save();
+    response.status(201).json(newUser);
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
 });
 
 // Función para obtener un usuario por ID
 export const getUserById = onRequest(async (request, response) => {
-    try {
-        await connectToDatabase();
-        const userId = request.query.id as string;
-        const user = await UserModel.findById(userId).populate('profile');
-        if (!user) {
-            response.status(404).json({ message: "User not found" });
-        } else {
-            response.status(200).json(user);
-        }
-    } catch (error: any) {
-        response.status(500).json({ error: error.message });
-    } finally {
-        await closeDatabaseConnection();
+  try {
+    await connectToDatabase();
+    const userId = request.query.id as string;
+    const user = await UserModel.findById(userId).populate('profile');
+    if (!user) {
+      response.status(404).json({ message: 'User not found' });
+    } else {
+      response.status(200).json(user);
     }
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
+});
+
+export const getUserByAuth0 = onRequest(async (request, response) => {
+  try {
+    await connectToDatabase();
+    const userId = request.query.id as string;
+    const user = await UserModel.findOne({ auth0_id: userId }).populate(
+      'profile'
+    );
+    const jobs = await JobModel.find({user_applicants: user?._id})
+    const result = {
+      user, jobs
+    }
+
+    if (!user) {
+      response.status(404).json({ message: 'User not found' });
+    } else {
+      response.status(200).json(result);
+    }
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
 });
 
 // Función para actualizar un usuario por ID
 export const updateUserById = onRequest(async (request, response) => {
-    try {
-        await connectToDatabase();
-        const userId = request.query.id as string;
-        const userData = request.body;
-        const updatedUser = await UserModel.findByIdAndUpdate(userId, userData, { new: true }).populate('profile');
-        if (!updatedUser) {
-            response.status(404).json({ message: "User not found" });
-        } else {
-            response.status(200).json(updatedUser);
-        }
-    } catch (error: any) {
-        response.status(500).json({ error: error.message });
-    } finally {
-        await closeDatabaseConnection();
+  try {
+    await connectToDatabase();
+    const userId = request.query.id as string;
+    const userData = request.body;
+    const updatedUser = await UserModel.findByIdAndUpdate(userId, userData, {
+      new: true,
+    }).populate('profile');
+    if (!updatedUser) {
+      response.status(404).json({ message: 'User not found' });
+    } else {
+      response.status(200).json(updatedUser);
     }
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
 });
 
 // Función para eliminar un usuario por ID
 export const deleteUserById = onRequest(async (request, response) => {
-    try {
-        await connectToDatabase();
-        const userId = request.query.id as string;
-        const deletedUser = await UserModel.findByIdAndDelete(userId).populate('profile');
-        if (!deletedUser) {
-            response.status(404).json({ message: "User not found" });
-        } else {
-            response.status(200).json(deletedUser);
-        }
-    } catch (error: any) {
-        response.status(500).json({ error: error.message });
-    } finally {
-        await closeDatabaseConnection();
+  try {
+    await connectToDatabase();
+    const userId = request.query.id as string;
+    const deletedUser = await UserModel.findByIdAndDelete(userId).populate(
+      'profile'
+    );
+    if (!deletedUser) {
+      response.status(404).json({ message: 'User not found' });
+    } else {
+      response.status(200).json(deletedUser);
     }
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
 });

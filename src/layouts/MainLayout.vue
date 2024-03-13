@@ -91,13 +91,14 @@
 }
 </style>
 <script lang="ts">
-import { defineComponent, ref, beforeUnmount } from 'vue';
+import { defineComponent, ref, onUpdated, onMounted } from 'vue';
 import MenuComponent from 'components/Menu.vue';
 import SearchBar from 'components/SearchBar.vue';
 import WidgetComponent from 'pages/Widget.vue';
 import { useAuth0 } from '@auth0/auth0-vue';
 import { useRouter } from 'vue-router';
-import { useWidgetStore } from 'stores/widget';
+import { useWidgetStore } from '../stores/widget';
+import { useUserStore } from '../stores/user'
 
 const menuAdmin = [
   { title: 'Users', icon: 'people', color: 'red' },
@@ -117,13 +118,37 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const widgetStore = useWidgetStore();
-    console.log(widgetStore.widgetData, 'test');
+    const userStore = useUserStore();
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(true);
+    onUpdated(()=>{
+      setTimeout(()=>{
+        if(!isAuthenticated.value){
+          loginWithRedirect();
+        }
+      },1000)
+    })
 
+    onMounted(()=>{
+      console.log(isAuthenticated, 'mounted')
+      setTimeout(()=>{
+        if(!isAuthenticated.value){
+          loginWithRedirect();
+        }else{
+          updateUserData();
+        }
+      }, 2000)
+
+    })
     const login = () => {
       loginWithRedirect();
+    };
+
+    const updateUserData = () => {
+      // Aquí puedes llamar a una acción en la store de 'user' para actualizar los datos del
+      console.log(user.value)
+      userStore.fetchUserData(user.value.sub);
     };
 
     const loginOrLogout = () => {
@@ -131,7 +156,7 @@ export default defineComponent({
       if (isAuthenticated.value) {
         logout();
       } else {
-        login();
+        loginWithRedirect();
       }
     };
 
@@ -151,9 +176,10 @@ export default defineComponent({
       toggleRightDrawer,
       login,
       widgetStore,
+      updateUserData,
       user,
       recruiter: ref(false),
-      loginOrLogout,
+      loginOrLogout
     };
   },
 });

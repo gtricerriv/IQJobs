@@ -1,23 +1,15 @@
-import { CV } from './CV';
-import { Job } from './Job';
-import { Plan } from './Plan';
-import { Profile } from './Profile';
-import { Role } from './Role';
-import { Transaction } from './Transaction';
-import { User } from './User';
-import { View } from './View';
-export const test= 'asd';
+import { CVs as CV } from './CV';
+import { Jobs as Job } from './Job';
+import { Plans as Plan } from './Plan';
+import { Profiles as Profile } from './Profile';
+import { Roles as Role } from './Role';
+import { Transactions as Transaction } from './Transaction';
+import { Users as User } from './User';
+import { Views as View } from './View';
+export const test = 'asd';
 export const Profiles = Profile;
 export const Users = User;
-export default {
-    test: 'asdas',
-    //CV,
-    //Job,
-    //Plan,
-    Profiles: Profile,
-    //Role,
-    //Transaction,
-    Users: User,
-    //View
-};
-
+export const Jobs = Job;
+export const Plans = Plan;
+export const Roles = Role;
+export const Views = View;

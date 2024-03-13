@@ -1,23 +1,27 @@
-import { prop, getModelForClass, Ref, modelOptions } from '@typegoose/typegoose';
+import {
+  prop,
+  getModelForClass,
+  Ref,
+  modelOptions,
+} from '@typegoose/typegoose';
 import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
-import { Plan } from './Plan';
-import { View } from './View';
+import { Plans } from './Plan';
+import { Views } from './View';
 
-const { PlanModel } = Plan;
-const { ViewModel } = View;
+const { PlanModel, Plan } = Plans;
+const { ViewModel, View } = Views;
 @modelOptions({ schemaOptions: { id: false } })
+class Role extends TimeStamps {
+  @prop({ ref: () => PlanModel })
+  //@ts-ignore
+  public plan!: Ref<Plan>;
 
-class RoleClass extends TimeStamps {
-    @prop({ ref: () => PlanModel })
-    //@ts-ignore
-    public plan!: Ref<PlanClass>;
+  @prop({ ref: () => ViewModel })
+  //@ts-ignore
+  public views!: Ref<View>;
+}
 
-    @prop({ ref: () => ViewModel })
-    //@ts-ignore
-    public views!: Ref<ViewClass>;
-  }
+const RoleModel = getModelForClass(Role);
 
-const RoleModel = getModelForClass(RoleClass);
-
-export const Role = { RoleModel, RoleClass };
-export { RoleModel, RoleClass };
+export const Roles = { RoleModel, Role };
+export { RoleModel, Role };

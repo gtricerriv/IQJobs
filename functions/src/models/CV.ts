@@ -1,12 +1,11 @@
 import { prop, getModelForClass, modelOptions } from '@typegoose/typegoose';
 @modelOptions({ schemaOptions: { id: false } })
-
-class CVClass {
+class CV {
   @prop({ required: true })
   public link!: string;
 }
 
-const CVModel = getModelForClass(CVClass);
+const CVModel = getModelForClass(CV);
 
-export const CV = { CVModel, CVClass };
-export { CVModel, CVClass }
+export const CVs = { CVModel, CV };
+export { CVModel, CV };

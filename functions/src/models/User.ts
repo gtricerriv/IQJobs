@@ -1,14 +1,19 @@
-import { prop, getModelForClass, Ref, modelOptions } from '@typegoose/typegoose';
+import {
+  prop,
+  getModelForClass,
+  Ref,
+  modelOptions,
+} from '@typegoose/typegoose';
 import { TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
-import { ProfileModel, ProfileClass } from './Profile';
+import { ProfileModel, Profile } from './Profile';
 
 @modelOptions({ schemaOptions: { id: false } })
-class UserClass extends TimeStamps {
+class User extends TimeStamps {
   /**
    * ID de autenticación de Auth0 del usuario.
    *
    * @type {string}
-   * @memberof UserClass
+   * @memberof User
    */
   @prop({ required: true })
   public auth0_id!: string;
@@ -16,18 +21,16 @@ class UserClass extends TimeStamps {
   /**
    * Perfil asociado al usuario.
    *
-   * @type {typeof ProfileClass}
-   * @memberof UserClass
+   * @type {typeof Profile}
+   * @memberof User
    */
-  @prop({ ref: () => ProfileModel })
+  @prop({ ref: () => Profile })
   // @ts-ignore
-  public profile!: Ref<ProfileClass>[];
-  
+  profile: Ref<Profile>[];
 }
 
-const UserModel = getModelForClass(UserClass);
+const UserModel = getModelForClass(User);
 
-export const User = {UserModel, UserClass};
+export const Users = { UserModel, User };
 
-export { UserModel, UserClass };
-
+export { UserModel, User };

@@ -22,6 +22,7 @@ import {
   getUserById,
   deleteUserById,
   updateUserById,
+  getUserByAuth0,
 } from './controllers/UserController';
 import {
   createTransaction,
@@ -35,6 +36,7 @@ import {
   getJobs,
   updateJobById,
   deleteJobById,
+  getJobsWithUser,
 } from './controllers/JobController';
 import {
   createProfile,
@@ -87,6 +89,7 @@ export const deleteViewByIdRoute = onRequest(deleteViewById);
 // Rutas para el modelo User
 export const createUserRoute = onRequest(createUser);
 export const getUserByIdRoute = onRequest(getUserById);
+export const getUserByAuth0Route = onRequest(getUserByAuth0);
 export const updateUserByIdRoute = onRequest(updateUserById);
 export const deleteUserByIdRoute = onRequest(deleteUserById);
 
@@ -102,6 +105,12 @@ export const getJobsRoute = onRequest((req: any, res: any) => {
   handleCors(req, res);
   getJobs(req, res);
 });
+
+export const getJobsWithUserRoute = onRequest((req:any, res:any)=>{
+  handleCors(req, res);
+  getJobsWithUser(req, res);
+});
+
 export const getJobByIdRoute = onRequest(getJobById);
 export const updateJobByIdRoute = onRequest(updateJobById);
 export const deleteJobByIdRoute = onRequest(deleteJobById);

@@ -10,7 +10,9 @@
         vertical
         class="text-teal"
       >
-        <q-tab v-for="(cv, index) in cvs" :key="index" :name="'cv' + index" :label="'CV ' + cv.name" />
+        <q-tab v-for="(profile, index) in profiles" :key="index" :name="'profile' + index" :label="profile.name">
+          {{ profile.title }}
+        </q-tab>
       </q-tabs>
     </template>
 
@@ -21,38 +23,38 @@
         swipeable
         vertical
       >
-        <q-tab-panel v-for="(cv, index) in cvs" :key="index" :name="'cv' + index">
+        <q-tab-panel v-for="(profile, index) in profiles" :key="index" :name="'profile' + index">
           <q-card class="flex">
             <q-card-section class="bg-secondary fit text-title">
-              <div class="text-h5 text-white">Professional Profile - {{ cv.name }}</div>
+              <div class="text-h5 text-white">Professional Profile - {{ profile.title }}</div>
             </q-card-section>
-            <div style="width:50%;" class="shadow-4" v-if="cv.area">
+            <div style="width:50%;" class="shadow-4" v-if="profile.area">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Area</q-card-section>
-              <q-card-section style="text-align: justify;">{{ cv.area }}</q-card-section>
+              <q-card-section style="text-align: justify;">{{ profile.area }}</q-card-section>
             </div>
-            <div style="width:50%;" class="shadow-4" v-if="cv.coverLetter">
+            <div style="width:50%;" class="shadow-4" v-if="profile.coverLetter">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Cover Letter</q-card-section>
-              <q-card-section style="text-align: justify;">Cover Letter: {{ cv.coverLetter }}</q-card-section>
+              <q-card-section style="text-align: justify;">Cover Letter: {{ profile.coverLetter }}</q-card-section>
             </div>
-            <div style="width:50%;" class="shadow-4" v-if="cv.skills">
+            <div style="width:50%;" class="shadow-4" v-if="profile.skills">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Skills</q-card-section>
               <q-card-section style="text-align: justify;">
                 <ul>
-                  <li v-for="skill in cv.skills.split(',')" :key="skill">{{ skill }}</li>
+                  <li v-for="skill in profile.skills.split(',')" :key="skill">{{ skill }}</li>
                 </ul>
               </q-card-section>
             </div>
-            <div style="width:50%;" class="shadow-4" v-if="cv.education">
+            <div style="width:50%;" class="shadow-4" v-if="profile.education">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Education</q-card-section>
-              <q-card-section style="text-align: justify;">Education: {{ cv.education }}</q-card-section>
+              <q-card-section style="text-align: justify;">Education: {{ profile.education }}</q-card-section>
             </div>
-            <div class="shadow-4" v-if="cv.experience">
+            <div class="shadow-4" v-if="profile.experience">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Experience</q-card-section>
-              <q-card-section style="text-align: justify;">Experience: {{ cv.experience }}</q-card-section>
+              <q-card-section style="text-align: justify;">Experience: {{ profile.experience }}</q-card-section>
             </div>
-            <div class="shadow-4" v-if="cv.projects">
+            <div class="shadow-4" v-if="profile.projects">
               <q-card-section class="text-h6 text-grey-8" style="text-align: justify;">Projects</q-card-section>
-              <q-card-section v-html="cv.projects" style="text-align: justify;"></q-card-section>
+              <q-card-section v-html="profile.projects" style="text-align: justify;"></q-card-section>
             </div>
           </q-card>
         </q-tab-panel>
@@ -63,55 +65,25 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted, onUpdated } from 'vue';
+import { useProfileStore } from '../stores/profile';
 
 export default {
   setup() {
-    const cvs = [
-      {
-        name: 'FrontEnd',
-        area: `Experienced in cross-functional collaboration, strategic planning, and delivering results in fast-paced environments.`,
-        coverLetter: `Excellent communicator with the ability to lead and motivate teams towards achieving organizational goals while maintaining a customer-centric approach.`,
-        skills: `Problem-solving, Critical thinking, Data analysis, Presentation skills, Various software tools and technologies`,
-        education: `Bachelor's Degree in Business Administration with a focus on Marketing. Additional certifications in project management and leadership development.`,
-        experience: `Extensive work history in roles that have honed leadership, project management, and client relationship skills. Recognized for consistently exceeding performance targets.`,
-        projects: `Led multiple successful projects from conception to completion, demonstrating strong organizational skills, attention to detail, and ability to adapt to changing circumstances.`
-      },
-      {
-        name: 'Backend',
-        area: `Experienced in cross-functional collaboration, strategic planning, and delivering results in fast-paced environments.`,
-        coverLetter: `Excellent communicator with the ability to lead and motivate teams towards achieving organizational goals while maintaining a customer-centric approach.`,
-        skills: `Problem-solving, Critical thinking, Data analysis, Presentation skills, Various software tools and technologies`,
-        education: `Bachelor's Degree in Business Administration with a focus on Marketing. Additional certifications in project management and leadership development.`,
-        experience: `Extensive work history in roles that have honed leadership, project management, and client relationship skills. Recognized for consistently exceeding performance targets.`,
-        projects: `Led multiple successful projects from conception to completion, demonstrating strong organizational skills, attention to detail, and ability to adapt to changing circumstances.`
-      },
-      {
-        name: 'DevOps',
-        area: `Experienced in cross-functional collaboration, strategic planning, and delivering results in fast-paced environments.`,
-        coverLetter: `Excellent communicator with the ability to lead and motivate teams towards achieving organizational goals while maintaining a customer-centric approach.`,
-        skills: `Problem-solving, Critical thinking, Data analysis, Presentation skills, Various software tools and technologies`,
-        education: `Bachelor's Degree in Business Administration with a focus on Marketing. Additional certifications in project management and leadership development.`,
-        experience: `Extensive work history in roles that have honed leadership, project management, and client relationship skills. Recognized for consistently exceeding performance targets.`,
-        projects: `Led multiple successful projects from conception to completion, demonstrating strong organizational skills, attention to detail, and ability to adapt to changing circumstances.`
-      },
-      {
-        name: 'Recluiter',
-        area: `Experienced in cross-functional collaboration, strategic planning, and delivering results in fast-paced environments.`,
-        coverLetter: `Excellent communicator with the ability to lead and motivate teams towards achieving organizational goals while maintaining a customer-centric approach.`,
-        skills: `Problem-solving, Critical thinking, Data analysis, Presentation skills, Various software tools and technologies`,
-        education: `Bachelor's Degree in Business Administration with a focus on Marketing. Additional certifications in project management and leadership development.`,
-        experience: `Extensive work history in roles that have honed leadership, project management, and client relationship skills. Recognized for consistently exceeding performance targets.`,
-        projects: `Led multiple successful projects from conception to completion, demonstrating strong organizational skills, attention to detail, and ability to adapt to changing circumstances.`
-      },
-      
-      // Add more CV objects here as needed
-    ]
+    const profiles = ref([]);
+    const tab = ref('profile0');
+    const splitterModel = ref(20);
 
-    const tab = ref('cv0')
-    const splitterModel = ref(20)
+    const profileStore = useProfileStore(); // Accede a la store de 'profile'
 
-    return { cvs, tab, splitterModel }
+    onMounted(async () => {
+      setTimeout(()=>{
+        profiles.value = profileStore.profiles; // Asigna los perfiles de la store a la variable local
+      },4000);
+    });
+
+
+    return { profiles, tab, splitterModel };
   }
 }
 </script>

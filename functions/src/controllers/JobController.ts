@@ -1,6 +1,8 @@
 import { JobModel } from '../models/Job';
 import { connectToDatabase, closeDatabaseConnection } from '../config';
 import { Request, Response } from 'express';
+import { UserModel } from '../models/User';
+import { ProfileModel } from '../models/Profile';
 
 const handleResponse = (response: Response, statusCode: number, data: any) => {
   response.status(statusCode).json(data);
@@ -27,6 +29,36 @@ export const getJobs = async (request: Request, response: Response) => {
     const limit = parseInt(request.query.limit as string) || 10;
 
     const jobs = await JobModel.find()
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    handleResponse(response, 200, jobs);
+  } catch (error: any) {
+    handleResponse(response, 500, { error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
+};
+export const getJobsWithUser = async (request: Request, response: Response) => {
+  try {
+    await connectToDatabase();
+
+    const page = parseInt(request.query.page as string) || 1;
+    const limit = parseInt(request.query.limit as string) || 10;
+
+    const jobs = await JobModel.find()
+      .populate({
+        path: 'user_applicants',
+        model: ProfileModel.modelName
+      })
+      .populate({
+        path: 'recruiter',
+        model: ProfileModel.modelName
+      })
+      .populate({
+        path: 'user',
+        model: ProfileModel.modelName
+      })
       .skip((page - 1) * limit)
       .limit(limit);
 
