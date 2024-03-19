@@ -2,16 +2,15 @@
   <q-list>
     <q-item-label header> Menu </q-item-label>
 
-    <EssentialLink
-      v-for="link in essentialLinks"
-      :key="link.title"
-      v-bind="link"
-    />
+    <EssentialLink v-for="link in menuToShow" :key="link.title" v-bind="link" />
   </q-list>
 </template>
 <script>
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, watch, onMounted } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
+import { useUserStore } from '../stores/user';
+import { storeToRefs } from 'pinia';
+
 const menuRecruiters = [
   {
     title: 'Applicants',
@@ -87,10 +86,40 @@ export default defineComponent({
   components: {
     EssentialLink,
   },
+
   setup() {
+    const userStore = useUserStore();
+    const { currentRole } = storeToRefs(userStore)
+
+    const menuToShow = ref([]);
+
+    const handleMenuOptions = () => {
+      if (currentRole.value == 'recruiter') {
+        menuToShow.value = menuRecruiters;
+      } else {
+        menuToShow.value = menuApplicants;
+      }
+    }
+
+    watch(currentRole, () => {
+      console.log('currentRole state changed, do something!');
+      handleMenuOptions();
+    });
+
+    onMounted(() => {
+      handleMenuOptions();
+    });
+
     return {
-      essentialLinks: menuApplicants,
+      menuToShow,
+      currentRole,
+      userStore
     };
+  },
+  computed: {
+    tripleCounter() {
+      return this.counterStore.counter * 3
+    },
   },
 });
 </script>
