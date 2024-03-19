@@ -155,7 +155,6 @@ export default defineComponent({
     }
 
     watch(currentRole, () => {
-      console.log('currentRole state changed, do something!');
       handleLayoutColor();
     });
 
