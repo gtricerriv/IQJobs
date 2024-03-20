@@ -12,12 +12,23 @@ export const useJobsStore = defineStore('jobs', {
       try {
         const baseUrl =
           process.env.NODE_ENV === 'production'
-            ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app'
-            : 'https://getjobsroute-7mlffi3t2a-uc.a.run.app';
-        const response = await axios.get(baseUrl, {
+            ? 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/'
+            : 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/';
+        const { data } = await axios.get(baseUrl, {
           params: { page, limit },
         });
-        this.jobList = response.data; // Actualización del nombre de la variable de estado
+
+        console.log('data', data);
+
+        // TODO: revisar aca el sort
+
+        console.log('antes del sort', data);
+
+        this.jobList = data.sort(
+          (a: any, b: any) => Number(b?.premiun) - Number(a?.premiun)
+        );
+
+        console.log('despues del sort', this.jobList);
       } catch (error) {
         console.error(error);
         throw new Error('Error al obtener los trabajos');

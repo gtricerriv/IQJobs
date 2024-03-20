@@ -1,19 +1,12 @@
 <template>
   <div class="q-pa-xl q-gutter-lg" style="width: 100%">
+    ACAAA
     <div v-for="(job, index) in paginatedJobs" :key="index">
-      <ArticleComponent
-        :description="job.description"
-        :position="job.position"
-        :provider="job.provider ? job.provider : ''"
-        :title="job.title"
-      />
+      {{ job.user_applicants }}
+      <ArticleComponent :description="job.description" :position="job.position"
+        :provider="job.provider ? job.provider : ''" :title="job.title" :aplicants="job.user_applicants" />
     </div>
-    <q-pagination
-      class="flex-center"
-      v-model="current"
-      :max="totalPages"
-      direction-links
-    />
+    <q-pagination class="flex-center" v-model="current" :max="totalPages" direction-links />
   </div>
 </template>
 

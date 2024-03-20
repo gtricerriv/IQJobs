@@ -51,6 +51,9 @@
       <router-view />
     </q-page-container>
   </q-layout>
+
+  <AplicantDialog></AplicantDialog>
+
 </template>
 <style>
 @media screen and (max-width: 767px) {
@@ -70,7 +73,7 @@ import { useRouter } from 'vue-router';
 import { useWidgetStore } from '../stores/widget';
 import { useUserStore } from '../stores/user'
 import { storeToRefs } from 'pinia';
-
+import AplicantDialog from '../components/AplicantDialog.vue'
 const menuAdmin = [
   { title: 'Users', icon: 'people', color: 'red' },
   { title: 'Applicants', icon: 'translate', color: 'admin' },
@@ -84,6 +87,7 @@ export default defineComponent({
     SearchBar,
     MenuComponent,
     WidgetComponent,
+    AplicantDialog
   },
 
   setup() {
