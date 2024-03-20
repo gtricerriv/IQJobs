@@ -5,13 +5,18 @@ import axios from 'axios';
 export const useUserStore = defineStore('counter', {
   state: () => ({
     userData: null, // Agregar un state para almacenar los datos del usuario
-    currentRole: 'recruiter', // recruiter o applicant
+    currentRole: 'applicant', // recruiter o applicant
     premiun: false, // TODO: pa despues
+    currentProfile: {},
   }),
 
   getters: {
     getCurrentRole(): boolean {
       return this.currentRole === 'recruiter' ? true : false;
+    },
+
+    getCurrentProfile(): object {
+      return this.currentProfile;
     },
   },
 
@@ -37,6 +42,13 @@ export const useUserStore = defineStore('counter', {
       } else {
         this.currentRole = 'applicant';
       }
+    },
+    setCurrentProfile(profile: object) {
+      this.currentProfile = profile;
+    },
+
+    isCurrentProfileSelected() {
+      return Object.keys(this.currentProfile).length;
     },
   },
 });

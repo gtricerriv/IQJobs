@@ -42,7 +42,7 @@
       <WidgetComponent :description="widgetStore.widgetData.description" :position="widgetStore.widgetData.position"
         :provider="widgetStore.widgetData.provider" :title="widgetStore.widgetData.title" />
       <div class="absolute-bottom">
-        <q-btn color="primary" class="fit" label="Aceptar Oferta" />
+        <q-btn color="primary" class="fit" :label="userStore.getCurrentRole ? 'Aceptar Oferta' : 'Postular a Oferta'" />
       </div>
       <!-- drawer content -->
     </q-drawer>
@@ -147,7 +147,7 @@ export default defineComponent({
       userStore.setRole(recruiter.value);
     }
     const handleLayoutColor = () => {
-      if (currentRole.value == 'recruiter') {
+      if (userStore.getCurrentRole) {
         setCssVar('primary', '#00897B');
       } else {
         setCssVar('primary', '#1976d2');
@@ -171,7 +171,9 @@ export default defineComponent({
       user,
       recruiter,
       loginOrLogout,
-      handleRoleToggle
+      handleRoleToggle,
+      currentRole,
+      userStore
     };
   },
 });

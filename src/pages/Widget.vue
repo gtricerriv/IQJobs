@@ -1,11 +1,13 @@
 <template>
   <div>
-    <q-scroll-area
-      :thumb-style="thumbStyle"
-      :bar-style="barStyle"
-      :class="showProfile || showTableProfile ? 'shadow-4' : ''"
-      style="height: 95vh; width: 100%"
-    >
+    <template v-if="userStore.isCurrentProfileSelected() && !userStore.getCurrentRole">
+      <div class="text-h6 text-grey">Current Profile:</div>
+      <div class="text-h6 text-grey">{{ userStore.currentProfile?.title }}</div>
+      <div class="text-h6 text-grey">{{ userStore.getCurrentProfile?.area }}</div>
+    </template>
+
+    <q-scroll-area :thumb-style="thumbStyle" :bar-style="barStyle"
+      :class="showProfile || showTableProfile ? 'shadow-4' : ''" style="height: 95vh; width: 100%">
       <div class="q-pa-md flex-center">
         <div>
           <p>{{ position }}</p>
@@ -18,9 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, PropType } from 'vue';
-import axios from 'axios';
-
+import { defineComponent, ref } from 'vue';
+import { useUserStore } from '../stores/user';
 export default defineComponent({
   name: 'WidgetPage',
   props: {
@@ -42,10 +43,13 @@ export default defineComponent({
     },
   },
   setup(props) {
+
+    const userStore = useUserStore();
     console.log(props);
     const loadedHtml = ref('');
     return {
       loadedHtml,
+      userStore
     };
   },
 });
