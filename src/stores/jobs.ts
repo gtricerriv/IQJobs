@@ -54,7 +54,7 @@ export const useJobsStore = defineStore('jobs', {
           }
         }
 
-        const { data } = await axios.get(baseUrl, params);
+        const { data } = await axios.get(baseUrl, { params });
 
         this.jobListFiltered = sortPremiunFirst(data);
       } catch (error) {
