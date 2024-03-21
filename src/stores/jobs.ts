@@ -48,8 +48,8 @@ export const useJobsStore = defineStore('jobs', {
           if (queryParams[param]) {
             if (param == 'premiun') {
               params.append(param, 'true');
-            } else if (param !== 'body') {
-              params.append(param, queryParams.body);
+            } else if (param == 'body') {
+              params.append(param, queryParams[param]);
             }
           }
         }
