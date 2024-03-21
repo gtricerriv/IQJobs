@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-
+import { sortPremiunFirst } from '../helpers/sortPremiunFirst';
 export const useWidgetStore = defineStore({
   id: 'widget',
   state: () => ({
@@ -15,7 +15,7 @@ export const useWidgetStore = defineStore({
   }),
   getters: {
     getWidgetAplicants(): any {
-      return this.widgetAplicants;
+      return sortPremiunFirst(this.widgetAplicants);
     },
     getSelectedAplicant(): any {
       return this.selectedApplicant;

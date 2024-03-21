@@ -1,7 +1,6 @@
 <template>
   <div @click="handleSetDataToModal" class="onPress q-pa-md bg-s shadow-4 bg-grey-1">
     <div class="row">
-      <!-- TODO: Revisar aca, solicitar job con aplicantes con y sin premiun -->
       <div v-if="!aplicant.premiun == true" class="col-3 text-start">
         Premiun 🏅
       </div>
@@ -18,7 +17,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import { useWidgetStore } from 'stores/widget';
+import { useWidgetStore } from '../stores/widget';
 
 const props = defineProps({
   aplicant: {
