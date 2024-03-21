@@ -72,8 +72,6 @@ export default defineComponent({
     }
 
     const updateWidget = (props) => {
-      console.log(' actualizando widget');
-
       widgetStore.updateWidgetData(props);
       updateAplicants();
     }

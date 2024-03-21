@@ -1,5 +1,4 @@
 <template>
-  DADAD
   <div class="q-pa-xl q-gutter-lg" style="width: 100%">
     <div v-for="(job, index) in paginatedJobs" :key="index">
       <ArticleComponent :description="job.description.value" :position="job.position.value"
@@ -8,7 +7,6 @@
     <q-pagination class="flex-center" v-model="current" :max="totalPages" direction-links />
   </div>
 </template>
-s
 <script>
 import ArticleComponent from 'components/ArticleComponent.vue';
 import { useStore } from 'stores/index';

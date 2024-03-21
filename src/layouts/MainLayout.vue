@@ -147,7 +147,6 @@ export default defineComponent({
     };
 
     const handleRoleToggle = () => {
-      console.log('el pepe', recruiter.value);
       userStore.setRole(recruiter.value);
     }
     const handleLayoutColor = () => {
@@ -160,6 +159,7 @@ export default defineComponent({
 
     watch(currentRole, () => {
       handleLayoutColor();
+      router.push({ path: '/' });
     });
 
     return {

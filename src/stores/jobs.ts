@@ -7,7 +7,11 @@ export const useJobsStore = defineStore('jobs', {
     jobListFiltered: [],
     showJobFilter: false,
   }),
-
+  getters: {
+    getShowJobFilter(): boolean {
+      return this.showJobFilter;
+    },
+  },
   actions: {
     async fetchJobList(page: any, limit: any) {
       // Cambio de nombre de la función de acción
@@ -29,6 +33,8 @@ export const useJobsStore = defineStore('jobs', {
 
     async searchJobs(queryParams: {}) {
       try {
+        this.setShowJobFilter(true);
+
         const baseUrl =
           process.env.NODE_ENV === 'production'
             ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/'
@@ -36,20 +42,29 @@ export const useJobsStore = defineStore('jobs', {
 
         const params = new URLSearchParams();
 
+        // Recorremos el objeto de params, si el valor es distinto de false lo agregamos
+        // Ya que esto indica si se marco o no en el checkbox del buscador
         for (const param in queryParams) {
-          params.append(param, queryParams[param]);
+          if (queryParams[param]) {
+            params.append(param, queryParams.body);
+          }
         }
-        console.log(params.toString());
 
-        // const { data } = await axios.get(baseUrl, {
-        //   params,
-        // });
+        const { data } = await axios.get(baseUrl, params);
 
-        // this.jobList = sortPremiunFirst(data);
+        this.jobListFiltered = sortPremiunFirst(data);
       } catch (error) {
         console.error(error);
-        throw new Error('Error al obtener los trabajos');
+        throw new Error('Error al obtener los trabajos filtrados');
       }
+    },
+
+    setShowJobFilter(newData: boolean) {
+      this.showJobFilter = newData;
+    },
+
+    resetJobListFiltered() {
+      this.jobListFiltered = [];
     },
   },
 });

@@ -26,12 +26,9 @@ export const useWidgetStore = defineStore({
   },
   actions: {
     updateWidgetData(newData: any) {
-      console.log(newData, 'test2');
       this.widgetData = { ...this.widgetData, ...newData };
     },
     updateWidgetAplicants(newData: any) {
-      console.log(' ACTUALIZANDO EL APLICANTS', newData);
-
       this.widgetAplicants = newData;
     },
     setSelectedAplicant(newData: any) {
