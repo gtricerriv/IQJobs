@@ -16,14 +16,14 @@ export const useProfileStore = defineStore('profile', {
       }
     },
 
-    updateProfiles(newProfiles:any) {
+    updateProfiles(newProfiles: any) {
       this.profiles = newProfiles; // Actualiza la lista de perfiles con el nuevo array
-    }
+    },
   },
 
   getters: {
-    getProfiles() {
-      return this.profiles; // Getter para obtener el state 'profiles'
-    }
-  }
+    // getProfiles() {
+    //   return this.profiles || null; // Getter para obtener el state 'profiles'
+    // },
+  },
 });

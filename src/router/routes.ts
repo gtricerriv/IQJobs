@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/widget-jobs',
-    component: () => import('pages/Widget.vue')
+    component: () => import('pages/Widget.vue'),
   },
   {
     path: '/',
@@ -15,6 +15,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/jobs', component: () => import('pages/JobPosts.vue') },
+      { path: '/new-job', component: () => import('pages/NewJob.vue') },
       { path: '/applicants', component: () => import('pages/Applicant.vue') },
       { path: '/profile', component: () => import('pages/Profile.vue') },
       { path: '/cv', component: () => import('pages/CV.vue') },
@@ -27,6 +28,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/jobs', component: () => import('pages/JobPosts.vue') },
+      { path: '/new-job', component: () => import('pages/NewJob.vue') },
       { path: '/applicants', component: () => import('pages/Applicant.vue') },
       { path: '/recruiters', component: () => import('pages/Recruiter.vue') },
       { path: '/settings', component: () => import('pages/Settings.vue') },
