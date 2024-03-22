@@ -4,18 +4,18 @@
       <template v-slot:append>
         <q-icon v-if="params.body === ''" name="search" />
         <q-icon v-else name="clear" class="cursor-pointer" @click="handleResetSearch" />
+        <q-btn-dropdown flat color="" icon="account_circle">
+          <div class="row no-wrap q-pa-md">
+            <div class="column fit" style="justify-content: center; align-items: start">
+              <q-checkbox v-model="params.title" label="title" color="teal" />
+              <q-checkbox v-model="params.companies" label="companies" color="teal" />
+              <q-checkbox v-model="params.premiun" label="Premiun" color="teal" />
+            </div>
+          </div>
+        </q-btn-dropdown>
+        <!-- agregar un boton para desplegar un modal con los filtros de busqueda -->
       </template>
     </q-input>
-
-
-    <!-- Checkboxes for query params -->
-    <div class="q-pa-md">
-      <div class="q-gutter-sm">
-        <q-checkbox v-model="params.title" label="title" color="teal" />
-        <q-checkbox v-model="params.companies" label="companies" color="teal" />
-        <q-checkbox v-model="params.premiun" label="Premiun" color="teal" />
-      </div>
-    </div>
   </div>
 </template>
 

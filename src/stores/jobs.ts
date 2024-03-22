@@ -45,11 +45,11 @@ export const useJobsStore = defineStore('jobs', {
         // Recorremos el objeto de params, si el valor es distinto de false lo agregamos
         // Ya que esto indica si se marco o no en el checkbox del buscador
         for (const param in queryParams) {
-          if (queryParams[param]) {
+          if (queryParams[param] == true) {
             if (param == 'premiun') {
               params.append(param, 'true');
-            } else if (param == 'body') {
-              params.append(param, queryParams[param]);
+            } else {
+              params.append(param, queryParams['body']);
             }
           }
         }
