@@ -1,111 +1,109 @@
 <template>
   <div class="q-pa-md q-gutter-lg" style="width:100%;">
-    <q-input label="Profile name" v-model="profileName" />
-    <q-input label="First Name" v-model="firstName" />
-    <q-input label="Last Name" v-model="lastName" />
-    <q-select label="Area" :options="optionsArea" option-label="label" option-value="value" v-model="area" />
-    <q-input v-model="coverLetter" type="textarea" label="Cover Letter" />
-    <q-select v-model="selectedType" label="Select Type" :options="options" option-label="label" option-value="value" />
-    <q-editor
-      flat
-      content-class="bg-grey-3"
-      toolbar-text-color="white"
-      toolbar-toggle-color="yellow-8"
-      toolbar-bg="primary"
-      @paste="pasteCapture"
-      @drop="dropCapture"
-      :toolbar="[
-        [
-          {
-            label: $q.lang.editor.align,
-            icon: $q.iconSet.editor.align,
-            fixedLabel: true,
-            options: ['left', 'center', 'right', 'justify']
-          }
-        ],
-        ['bold', 'italic', 'strike', 'underline', 'subscript', 'superscript'],
-        ['token', 'hr', 'link', 'custom_btn'],
-        ['print', 'fullscreen'],
-        [
-          {
-            label: $q.lang.editor.formatting,
-            icon: $q.iconSet.editor.formatting,
-            list: 'no-icons',
-            options: [
-              'p',
-              'h1',
-              'h2',
-              'h3',
-              'h4',
-              'h5',
-              'h6',
-              'code'
-            ]
-          },
-          {
-            label: $q.lang.editor.fontSize,
-            icon: $q.iconSet.editor.fontSize,
-            fixedLabel: true,
-            fixedIcon: true,
-            list: 'no-icons',
-            options: [
-              'size-1',
-              'size-2',
-              'size-3',
-              'size-4',
-              'size-5',
-              'size-6',
-              'size-7'
-            ]
-          },
-          {
-            label: $q.lang.editor.defaultFont,
-            icon: $q.iconSet.editor.font,
-            fixedIcon: true,
-            list: 'no-icons',
-            options: [
-              'default_font',
-              'arial',
-              'arial_black',
-              'comic_sans',
-              'courier_new',
-              'impact',
-              'lucida_grande',
-              'times_new_roman',
-              'verdana'
-            ]
-          },
-          'removeFormat'
-        ],
-        ['quote', 'unordered', 'ordered', 'outdent', 'indent'],
+    <q-form @submit="handleSubmit" class="q-gutter-md">
+      <q-input label="Profile name" v-model="profileName" />
+      <q-input label="First Name" v-model="firstName" />
+      <q-input label="Last Name" v-model="lastName" />
+      <q-select label="Area" :options="optionsArea" option-label="label" option-value="value" v-model="area" />
+      <q-input v-model="coverLetter" type="textarea" label="Cover Letter" />
+      <q-select v-model="selectedType" label="Select Type" :options="options" option-label="label"
+        option-value="value" />
+      <q-select v-model="selectedSite" label="Select Site" :options="siteOptions" option-label="label"
+        option-value="value" />
+      <q-editor flat content-class="bg-grey-3" toolbar-text-color="white" toolbar-toggle-color="yellow-8"
+        toolbar-bg="primary" @paste="pasteCapture" @drop="dropCapture" :toolbar="[
+      [
+        {
+          label: $q.lang.editor.align,
+          icon: $q.iconSet.editor.align,
+          fixedLabel: true,
+          options: ['left', 'center', 'right', 'justify']
+        }
+      ],
+      ['bold', 'italic', 'strike', 'underline', 'subscript', 'superscript'],
+      ['token', 'hr', 'link', 'custom_btn'],
+      ['print', 'fullscreen'],
+      [
+        {
+          label: $q.lang.editor.formatting,
+          icon: $q.iconSet.editor.formatting,
+          list: 'no-icons',
+          options: [
+            'p',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'code'
+          ]
+        },
+        {
+          label: $q.lang.editor.fontSize,
+          icon: $q.iconSet.editor.fontSize,
+          fixedLabel: true,
+          fixedIcon: true,
+          list: 'no-icons',
+          options: [
+            'size-1',
+            'size-2',
+            'size-3',
+            'size-4',
+            'size-5',
+            'size-6',
+            'size-7'
+          ]
+        },
+        {
+          label: $q.lang.editor.defaultFont,
+          icon: $q.iconSet.editor.font,
+          fixedIcon: true,
+          list: 'no-icons',
+          options: [
+            'default_font',
+            'arial',
+            'arial_black',
+            'comic_sans',
+            'courier_new',
+            'impact',
+            'lucida_grande',
+            'times_new_roman',
+            'verdana'
+          ]
+        },
+        'removeFormat'
+      ],
+      ['quote', 'unordered', 'ordered', 'outdent', 'indent'],
 
-        ['undo', 'redo'],
-        ['viewsource']
-      ]"
-      :fonts="{
-        arial: 'Arial',
-        arial_black: 'Arial Black',
-        comic_sans: 'Comic Sans MS',
-        courier_new: 'Courier New',
-        impact: 'Impact',
-        lucida_grande: 'Lucida Grande',
-        times_new_roman: 'Times New Roman',
-        verdana: 'Verdana'
-      }"
-      v-model="selectedContent" aria-label="content"
-      max-height="300px"
-    />
+      ['undo', 'redo'],
+      ['viewsource']
+    ]" :fonts="{
+      arial: 'Arial',
+      arial_black: 'Arial Black',
+      comic_sans: 'Comic Sans MS',
+      courier_new: 'Courier New',
+      impact: 'Impact',
+      lucida_grande: 'Lucida Grande',
+      times_new_roman: 'Times New Roman',
+      verdana: 'Verdana'
+    }" v-model="selectedContent" aria-label="content" max-height="300px" />
 
+      <q-btn class="q-mt-md" label="Submit" type="submit" color="primary" />
+    </q-form>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent, watch } from 'vue';
+import { useJobsStore } from '../stores/jobs';
 
 export default defineComponent({
   name: 'profileComponent',
-  setup: function() {
+  setup: function () {
+    const jobsStore = useJobsStore();
     const selectedType = ref('Skills');
+    const selectedSite = ref('Linkedin');
     const coverLetter = ref('');
     const selectedContent = ref('');
     const profileName = ref('');
@@ -118,7 +116,11 @@ export default defineComponent({
       'Experience',
       'Projects'
     ];
-    const optionsArea= [
+    const siteOptions = [
+      'Linkedin',
+      'Glassdoor',
+    ];
+    const optionsArea = [
       'Software development',
       'Graphic design',
       'Digital marketing',
@@ -200,6 +202,31 @@ export default defineComponent({
       }
     };
 
+    const handleSubmit = () => {
+      if (profileName.value == '' || firstName.value == '' || lastName.value == '' || area.value == '' || coverLetter.value == '' || selectedContent.value == '') {
+        return console.log('completa todos los campos', {
+          profileName: profileName.value,
+          firstName: firstName.value,
+          lastName: lastName.value,
+          area: area.value,
+          coverLetter: coverLetter.value,
+          content: selectedContent.value
+        });
+      }
+
+      const body = {
+        profileName: profileName.value,
+        firstName: firstName.value,
+        lastName: lastName.value,
+        area: area.value,
+        coverLetter: coverLetter.value,
+        type: selectedType.value,
+        site: selectedSite.value,
+        content: selectedContent.value
+      }
+
+      jobsStore.postCreateJob(body);
+    }
 
     return {
       selectedType,
@@ -213,7 +240,10 @@ export default defineComponent({
       lastName,
       area,
       dropCapture,
-      pasteCapture
+      pasteCapture,
+      selectedSite,
+      siteOptions,
+      handleSubmit
     };
   }
 });

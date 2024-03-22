@@ -5,8 +5,8 @@ import axios from 'axios';
 export const useUserStore = defineStore('counter', {
   state: () => ({
     userData: null, // Agregar un state para almacenar los datos del usuario
-    // currentRole: 'applicant', // recruiter o applicant
-    currentRole: 'recruiter', // recruiter o applicant
+    currentRole: 'applicant', // recruiter o applicant
+    // currentRole: 'recruiter', // recruiter o applicant
     premiun: false, // TODO: pa despues
     currentProfile: {},
   }),
@@ -49,6 +49,17 @@ export const useUserStore = defineStore('counter', {
     },
     isCurrentProfileSelected() {
       return Object.keys(this.currentProfile).length;
+    },
+    async postCreateProfile(body: {}) {
+      try {
+        // TODO: remover luego
+        // const URL = '';
+        // const { data } = await axios.post(URL, body);
+
+        console.log('trabajo creado correctamente', body);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 });

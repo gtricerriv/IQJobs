@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-xl">
-    <q-form @submit="handleSubmit" @reset="onReset" class="q-gutter-md">
+    <q-form @submit="handleSubmit" class="q-gutter-md">
       <q-input filled v-model="jobUrl" label="Your job url" lazy-rules
         :rules="[val => isValidURL(val) || 'Please enter a valid url']" />
       <div>
