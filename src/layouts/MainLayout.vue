@@ -31,6 +31,7 @@
             </div>
           </div>
         </q-btn-dropdown>
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
@@ -38,7 +39,7 @@
       <MenuComponent />
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer v-model="rightDrawerOpen" side="right" bordered>
       <WidgetComponent :description="widgetStore.widgetData.description" :position="widgetStore.widgetData.position"
         :provider="widgetStore.widgetData.provider" :title="widgetStore.widgetData.title" />
       <div class="absolute-bottom">
@@ -97,8 +98,9 @@ export default defineComponent({
     const recruiter = ref(userStore.getCurrentRole);
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const leftDrawerOpen = ref(false);
-    const rightDrawerOpen = ref(true);
     const { currentRole } = storeToRefs(userStore)
+    const { showRightSidebar } = storeToRefs(widgetStore)
+    const rightDrawerOpen = ref(showRightSidebar);
     onUpdated(() => {
       setTimeout(() => {
         if (!isAuthenticated.value) {
@@ -143,7 +145,7 @@ export default defineComponent({
     };
 
     const toggleRightDrawer = () => {
-      rightDrawerOpen.value = !rightDrawerOpen.value;
+      widgetStore.setShowRightSidebar(!rightDrawerOpen.value);
     };
 
     const handleRoleToggle = () => {

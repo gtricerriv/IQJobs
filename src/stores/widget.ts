@@ -12,6 +12,7 @@ export const useWidgetStore = defineStore({
     widgetAplicants: [],
     selectedApplicant: {},
     showAplicantDialog: false,
+    showRightSidebar: false,
   }),
   getters: {
     getWidgetAplicants(): any {
@@ -25,10 +26,15 @@ export const useWidgetStore = defineStore({
     },
   },
   actions: {
+    setShowRightSidebar(newStatus: boolean) {
+      this.showRightSidebar = newStatus;
+    },
     updateWidgetData(newData: any) {
+      this.showRightSidebar = true;
       this.widgetData = { ...this.widgetData, ...newData };
     },
     updateWidgetAplicants(newData: any) {
+      this.showRightSidebar = true;
       this.widgetAplicants = newData;
     },
     setSelectedAplicant(newData: any) {
