@@ -1,18 +1,29 @@
 <template>
-  <q-item clickable tag="router-link" :to="link">
-    <q-item-section v-if="icon" avatar>
-      <q-icon :color="color" :name="icon" />
-    </q-item-section>
-    <q-item-section>
-      <q-item-label>{{ $t(`${title}`) }}</q-item-label>
-      <q-item-label caption>{{ caption }}</q-item-label>
-    </q-item-section>
-  </q-item>
+  <div>
+    {{ }}
+    <q-item v-if="submenu.length == 0" :to="link" clickable>
+      <q-item-section avatar>
+        <q-icon :name="icon" :color="color" />
+      </q-item-section>
+      <q-item-section>
+        <q-item-label>{{ title }}</q-item-label>
+      </q-item-section>
+    </q-item>
+
+    <q-expansion-item v-else :label="title" :icon="icon" :color="color">
+      <q-list>
+        <q-item v-for="sublink in submenu" :key="sublink.title" :to="sublink.link" clickable>
+          <q-item-section>
+            <q-item-label>{{ sublink.title }}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-expansion-item>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
 export default defineComponent({
   name: 'EssentialLink',
   props: {
@@ -39,6 +50,11 @@ export default defineComponent({
     color: {
       type: String,
       default: '',
+    },
+
+    submenu: {
+      type: Array,
+      default: () => [],
     },
   },
 });

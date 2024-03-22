@@ -102,7 +102,7 @@ export default defineComponent({
     onUpdated(() => {
       setTimeout(() => {
         if (!isAuthenticated.value) {
-          loginWithRedirect();
+          // loginWithRedirect();
         }
       }, 1000)
     })

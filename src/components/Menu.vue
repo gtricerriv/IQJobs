@@ -22,7 +22,17 @@ const menuRecruiters = [
     title: 'Jobs',
     icon: 'work',
     color: 'teal-7',
-    link: 'jobs',
+    link: '',
+    submenu: [
+      {
+        title: 'Jobs List',
+        link: 'jobs',
+      },
+      {
+        title: 'New Job',
+        link: '/new-job'
+      },
+    ],
   },
   {
     title: 'Settings',
