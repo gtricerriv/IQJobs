@@ -64,7 +64,7 @@
 }
 </style>
 <script lang="ts">
-import { setCssVar } from 'quasar'
+import { setCssVar, LocalStorage } from 'quasar'
 import { defineComponent, ref, onUpdated, onMounted, watch } from 'vue';
 import MenuComponent from 'components/Menu.vue';
 import SearchBar from 'components/SearchBar.vue';
@@ -111,32 +111,34 @@ export default defineComponent({
 
     onMounted(() => {
       // console.log(isAuthenticated, 'mounted')
-      // setTimeout(() => {
-      //   if (!isAuthenticated.value) {
-      //     loginWithRedirect();
-      //   } else {
-      //     updateUserData();
-      //   }
-      // }, 6000)
+      setTimeout(() => {
+        // LocalStorage.set('userId', 'auth0|65edb8ef5822600f8660eb4b')
+        const userId = LocalStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
+        if (!isAuthenticated.value && !userId) {
+          loginWithRedirect();
+        } else {
+          updateUserData();
+        }
+      }, 2000)
       updateUserData();
       handleLayoutColor()
     })
-    const login = () => {
-      loginWithRedirect();
-    };
 
     const updateUserData = () => {
       // Aquí puedes llamar a una acción en la store de 'user' para actualizar los datos del
-      console.log(user.value)
+      LocalStorage.set('userId', user.value?.sub)
       userStore.fetchUserData('auth0|65edb8ef5822600f8660eb4b');
     };
 
     const loginOrLogout = () => {
-      console.log(isAuthenticated.value);
       if (isAuthenticated.value) {
         logout();
+        LocalStorage.remove('userId');
       } else {
-        loginWithRedirect();
+        const userId = LocalStorage.getItem('userId');
+        if (!userId) {
+          loginWithRedirect();
+        }
       }
     };
 
@@ -171,7 +173,6 @@ export default defineComponent({
       rightDrawerOpen,
       toggleLeftDrawer,
       toggleRightDrawer,
-      login,
       widgetStore,
       updateUserData,
       user,
