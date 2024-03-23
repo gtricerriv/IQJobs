@@ -5,7 +5,10 @@ export const useJobsStore = defineStore('jobs', {
   state: () => ({
     jobList: [], // Cambio de nombre de la variable de estado
     jobListFiltered: [],
+    newJobs: [],
+    allJobs: [],
     showJobFilter: false,
+    hasNotifications: false,
   }),
   getters: {
     getShowJobFilter(): boolean {
@@ -20,6 +23,7 @@ export const useJobsStore = defineStore('jobs', {
           process.env.NODE_ENV === 'production'
             ? 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/'
             : 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/';
+
         const { data } = await axios.get(baseUrl, {
           params: { page, limit },
         });
@@ -62,7 +66,25 @@ export const useJobsStore = defineStore('jobs', {
         throw new Error('Error al obtener los trabajos filtrados');
       }
     },
+    async getAllJobs() {
+      try {
+        console.log('obteniendo todos los trabajos');
 
+        const baseUrl =
+          process.env.NODE_ENV === 'production'
+            ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/'
+            : 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/';
+
+        const { data } = await axios.get(baseUrl, {
+          params: { page: 1, limit: 999 },
+        });
+
+        this.allJobs = data;
+      } catch (error) {
+        console.error(error);
+        throw new Error('Error al obtener los trabajos filtrados');
+      }
+    },
     async postCreateJob(body: {}) {
       try {
         // TODO: remover luego y agregar el endpoint adecuado
@@ -79,13 +101,42 @@ export const useJobsStore = defineStore('jobs', {
         throw new Error('Error al ocrear un nuevo trabajo');
       }
     },
-
     setShowJobFilter(newData: boolean) {
       this.showJobFilter = newData;
     },
-
     resetJobListFiltered() {
       this.jobListFiltered = [];
+    },
+    checkHasNotifications() {
+      setInterval(async () => {
+        try {
+          // Si no hay trabajos, no hay notificaciones
+          if (this.allJobs.length == 0) {
+            this.hasNotifications = false;
+            return;
+          }
+
+          const baseUrl =
+            process.env.NODE_ENV === 'production'
+              ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/'
+              : 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/';
+
+          const { data } = await axios.get(baseUrl, {
+            params: { page: 1, limit: 9999 },
+          });
+
+          if (data.length > this.allJobs.length) {
+            this.hasNotifications = true;
+
+            this.newJobs = data.filter((job: any) => {
+              return !this.allJobs.some((oldJob: any) => oldJob._id == job._id);
+            });
+          }
+        } catch (error) {
+          console.error(error);
+          throw new Error('Error al obtener los trabajos');
+        }
+      }, 1000 * 60 * 5); // 5 minutos
     },
   },
 });

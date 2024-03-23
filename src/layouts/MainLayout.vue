@@ -9,6 +9,8 @@
           <q-img width="100px" src="~assets/iqjobs.png" />
         </q-toolbar-title>
 
+        <NotificationBell></NotificationBell>
+
         <div>
           {{ $q.version }}
         </div>
@@ -67,6 +69,7 @@
 import { setCssVar, LocalStorage } from 'quasar'
 import { defineComponent, ref, onUpdated, onMounted, watch } from 'vue';
 import MenuComponent from 'components/Menu.vue';
+import NotificationBell from '../components/NotificationBell.vue';
 import SearchBar from 'components/SearchBar.vue';
 import WidgetComponent from 'pages/Widget.vue';
 import { useAuth0 } from '@auth0/auth0-vue';
@@ -88,7 +91,8 @@ export default defineComponent({
     SearchBar,
     MenuComponent,
     WidgetComponent,
-    AplicantDialog
+    AplicantDialog,
+    NotificationBell
   },
 
   setup() {
