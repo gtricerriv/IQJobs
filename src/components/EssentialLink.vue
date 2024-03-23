@@ -10,7 +10,7 @@
       </q-item-section>
     </q-item>
 
-    <q-expansion-item v-else :label="title" :icon="icon" :color="color">
+    <q-expansion-item v-else :label="title" :icon="icon" :color="color" header-class="text-secondary">
       <q-list>
         <q-item v-for="sublink in submenu" :key="sublink.title" :to="sublink.link" clickable>
           <q-item-section>

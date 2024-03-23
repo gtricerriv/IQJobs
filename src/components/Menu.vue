@@ -13,12 +13,6 @@ import { storeToRefs } from 'pinia';
 
 const menuRecruiters = [
   {
-    title: 'Applicants',
-    icon: 'people',
-    color: 'teal-7',
-    link: 'applicants',
-  },
-  {
     title: 'Jobs',
     icon: 'work',
     color: 'teal-7',
