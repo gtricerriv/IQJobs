@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-xl">
     <q-form @submit="handleSubmit" class="q-gutter-md">
-      <q-input filled v-model="jobUrl" label="Your job url" lazy-rules
+      <q-input filled v-model="profileUrl" label="Your profile url" lazy-rules
         :rules="[val => isValidURL(val) || 'Please enter a valid url']" />
       <div>
 
@@ -15,10 +15,12 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useJobsStore } from '../stores/jobs';
+import { useProfileStore } from '../stores/profile';
+import { useQuasar } from 'quasar';
 
-const jobsStore = useJobsStore()
-const jobUrl = ref('')
+const $q = useQuasar();
+const profileStore = useProfileStore()
+const profileUrl = ref('')
 const selectedOption = ref('')
 const options = [
   {
@@ -39,14 +41,29 @@ const isValidURL = (url: string) => {
   return urlPattern.test(url);
 }
 
-const handleSubmit = () => {
-  if (jobUrl.value == '' || selectedOption.value == '') return;
+const handleSubmit = async () => {
+
+  if (profileUrl.value == '' || selectedOption.value == '') return;
+
+  $q.loading.show({
+    delay: 0 // ms
+  });
+
   const body = {
-    url: jobUrl.value,
+    url: profileUrl.value,
     option: selectedOption.value['value']
   }
 
-  jobsStore.postCreateJob(body);
+  await profileStore.postCreateProfile(body);
+
+  resetForm();
+
+  $q.loading.hide()
+}
+
+const resetForm = () => {
+  profileUrl.value = ''
+  selectedOption.value = ''
 }
 
 
