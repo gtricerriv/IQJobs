@@ -7,7 +7,7 @@
         @click="() => { showImportProfile = true; showTableProfile = false; showProfile = false }" />
     </div>
     <q-scroll-area :thumb-style="thumbStyle" :bar-style="barStyle"
-      :class="showProfile || showTableProfile ? 'shadow-4' : ''" style="height: 65vh; width: 80vw">
+      :class="showProfile || showTableProfile ? 'shadow-4' : ''" style="height: 65vh; min-width: 60vw">
       <div class="q-pa-md" v-if="showTableProfile">
         <table-profile-component />
       </div>
@@ -44,7 +44,7 @@ export default {
       borderRadius: '5px',
       backgroundColor: '#027be3',
       width: '5px',
-      opacity: 0.75
+      opacity: 0.75,
     }
 
     const barStyle = {

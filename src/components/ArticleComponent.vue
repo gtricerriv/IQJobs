@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-3 text-start">
         <q-icon color="grey" size="xl" name="newspaper" />
+        <q-icon class="q-ml-md" color="primary" size="sm" name="group" /> {{ aplicants.length }}
       </div>
       <div class="col q-mt-sm text-right text-grey">
         <div class="text-bold">{{ title }}</div>

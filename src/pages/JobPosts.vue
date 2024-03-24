@@ -1,8 +1,6 @@
 <template>
   <div class="q-pa-xl q-gutter-lg" style="width: 100%">
     <div v-for="(job, index) in paginatedJobs" :key="index">
-      <!-- Temporal, sirve para ver que jobs tienen aplicantes -->
-      {{ job.user_applicants }}
       <ArticleComponent :description="job.description" :position="job.position"
         :provider="job.provider ? job.provider : ''" :title="job.title" :aplicants="job.user_applicants" />
     </div>
