@@ -1,7 +1,5 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
-    <q-btn label="Medium" color="primary" />
-
     <q-dialog v-model="widgetStore.getShowAplicantDialog">
       <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section>
