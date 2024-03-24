@@ -6,9 +6,26 @@ export const useJobsStore = defineStore('jobs', {
     jobList: [], // Cambio de nombre de la variable de estado
     jobListFiltered: [],
     newJobs: [],
+    notifications: [
+      {
+        _id: Date.now(),
+        title: 'Desarrollador PYTHON',
+        type: 'job',
+      },
+      {
+        _id: Date.now(),
+        title: 'Desarrollador JAVA',
+        type: 'job',
+      },
+      {
+        _id: Date.now(),
+        title: 'New message from:  Desarrollador JAVA',
+        type: 'chat',
+      },
+    ],
     allJobs: [],
     showJobFilter: false,
-    hasNotifications: false,
+    hasNotifications: true,
   }),
   getters: {
     getShowJobFilter(): boolean {
@@ -128,8 +145,17 @@ export const useJobsStore = defineStore('jobs', {
           if (data.length > this.allJobs.length) {
             this.hasNotifications = true;
 
-            this.newJobs = data.filter((job: any) => {
+            const newJobs = data.filter((job: any) => {
               return !this.allJobs.some((oldJob: any) => oldJob._id == job._id);
+            });
+
+            newJobs.map((job: any) => {
+              const notification = {
+                _id: Date.now(),
+                title: job.title,
+                type: 'job',
+              };
+              this.notifications = [notification, ...this.notifications];
             });
           }
         } catch (error) {
