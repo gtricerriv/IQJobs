@@ -29,6 +29,12 @@ const menuRecruiters = [
     ],
   },
   {
+    title: 'Chats',
+    icon: 'chat',
+    color: 'primary',
+    link: 'chats',
+  },
+  {
     title: 'Settings',
     icon: 'settings',
     color: 'teal-7',
@@ -54,6 +60,12 @@ const menuApplicants = [
     icon: 'article',
     color: 'primary',
     link: 'cv',
+  },
+  {
+    title: 'Chats',
+    icon: 'chat',
+    color: 'primary',
+    link: 'chats',
   },
   {
     title: 'Settings',

@@ -6,7 +6,8 @@ export const useJobsStore = defineStore('jobs', {
     jobList: [], // Cambio de nombre de la variable de estado
     jobListFiltered: [],
     newJobs: [],
-    notifications: [
+    notifications: [],
+    notificationsDummy: [
       {
         _id: Date.now(),
         title: 'Desarrollador PYTHON',
@@ -25,7 +26,7 @@ export const useJobsStore = defineStore('jobs', {
     ],
     allJobs: [],
     showJobFilter: false,
-    hasNotifications: true,
+    hasNotifications: false,
   }),
   getters: {
     getShowJobFilter(): boolean {
