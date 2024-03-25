@@ -3,7 +3,7 @@
     <q-dialog v-model="widgetStore.getShowAplicantDialog">
       <q-card style="width: 700px; max-width: 80vw;">
 
-        <q-card-section>
+        <q-card-section class="text-grey-8">
           <h6 class="text-center">Aplicant Profile</h6>
           <h6>Fist Name: {{ widgetStore.selectedApplicant?.first_name }}</h6>
           <h6>Last Name: {{ widgetStore.selectedApplicant?.last_name }}</h6>

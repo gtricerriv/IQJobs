@@ -47,7 +47,7 @@
       <WidgetComponent :description="widgetStore.widgetData.description" :position="widgetStore.widgetData.position"
         :provider="widgetStore.widgetData.provider" :title="widgetStore.widgetData.title" />
       <div class="absolute-bottom">
-        <q-btn color="primary" class="fit" :label="userStore.getCurrentRole ? 'Aceptar Oferta' : 'Postular a Oferta'" />
+        <q-btn color="primary" class="fit" :label="userStore.getCurrentRole ? '' : 'Postular a Oferta'" />
       </div>
       <!-- drawer content -->
     </q-drawer>
