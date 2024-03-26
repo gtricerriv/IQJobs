@@ -43,6 +43,10 @@ export default defineComponent({
     aplicants: {
       type: Array,
       required: true,
+    },
+    job_id: {
+      type: String,
+      required: true,
     }
   },
   setup(props) {
@@ -70,6 +74,7 @@ export default defineComponent({
     const updateAplicants = () => {
       console.log('aplicantes desde la funcion', props.aplicants);
       widgetStore.updateWidgetAplicants(props.aplicants);
+      widgetStore.selectedJoId = props.job_id;
     }
 
     const updateWidget = (props) => {

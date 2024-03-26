@@ -16,7 +16,8 @@
           <h6>contact: {{ widgetStore.selectedApplicant?.contact }}</h6>
           <h6>Premiun: {{ widgetStore.selectedApplicant?.premium ? 'Yes' : 'No' }}</h6>
 
-          <q-btn class="q-mt-md" color="primary" @click="handleStartChat">Start Chart</q-btn>
+          <q-btn class="q-mt-md" color="primary" @click="handleStartChat">{{ theChatExist ? 'View Chat' : 'Start Chat'
+            }}</q-btn>
         </q-card-section>
 
         <q-card-actions align="right" class="bg-white text-teal">
@@ -29,14 +30,62 @@
 
 <script setup lang="ts">
 import { useWidgetStore } from '../stores/widget';
+import { useChatsStore } from '../stores/chat';
+import { useQuasar } from 'quasar';
+import { useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
+import { watch, ref } from 'vue';
+
+const $q = useQuasar();
 const widgetStore = useWidgetStore();
-
-
+const { selectedApplicant } = storeToRefs(widgetStore);
+const chatStore = useChatsStore();
+const router = useRouter();
+const theChatExist = ref(false);
+const bodyData = ref({
+  profile_aplicant_id: '',
+  job_id: '',
+})
 const handleStartChat = () => {
-  // TODO: aca enviar una peticion al backend con un mensaje o saludo predeterminado, para asi crear el chat con este aplicant
-  // luego de creado el chat, redigir a la vista chat, con el id del chat que se acaba de crear, para que el chat se abra automaticamente
-  //  y asi mostrar esta conversación
+  if (theChatExist.value) {
+    router.push({ path: '/chats' });
+    widgetStore.setShowAplicantDialog(false);
+  } else {
+    createChat();
+  }
 }
+
+const createChat = async () => {
+
+  $q.loading.show({
+    delay: 0 // ms
+  });
+
+  bodyData.value.profile_aplicant_id = widgetStore.selectedApplicant._id;
+  bodyData.value.job_id = widgetStore.selectedJoId;
+
+  await chatStore.createChat(bodyData.value);
+
+  $q.loading.hide();
+
+  router.push({ path: '/chats' });
+
+}
+
+watch(selectedApplicant, () => {
+
+  bodyData.value.profile_aplicant_id = widgetStore.selectedApplicant._id;
+  bodyData.value.job_id = widgetStore.selectedJoId;
+
+  const { chat_exist, chat_id } = chatStore.chatExists(bodyData.value.profile_aplicant_id, bodyData.value.job_id);
+
+
+  if (chat_exist) {
+    theChatExist.value = chat_exist;
+    chatStore.currentChatId = chat_id;
+  }
+
+});
 </script>
 
 <style scoped>
