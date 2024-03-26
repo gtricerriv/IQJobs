@@ -116,7 +116,23 @@ export const useJobsStore = defineStore('jobs', {
         console.log('trabajo creado correctamente', body);
       } catch (error) {
         console.error(error);
-        throw new Error('Error al ocrear un nuevo trabajo');
+        throw new Error('Error al crear un nuevo trabajo');
+      }
+    },
+    async postCreateJobFromCsvData(body: {}) {
+      try {
+        // TODO: remover luego y agregar el endpoint adecuado
+        // const baseUrl =
+        //   process.env.NODE_ENV === 'production'
+        //     ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/'
+        //     : 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/';
+
+        // const { data } = await axios.post(baseUrl, body);
+
+        console.log('trabajo creado correctamente con csv', body);
+      } catch (error) {
+        console.error(error);
+        throw new Error('Error al crear un nuevo trabajo con csv');
       }
     },
     setShowJobFilter(newData: boolean) {
