@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <q-layout style="height: 47.7vw" class="shadow-2 rounded-borders">
+    <q-layout style="height: 47.7vw" class="shadow-2 rounded-borders bg-gradient">
       <q-header>
         <q-toolbar>
           <q-avatar>
@@ -41,8 +41,8 @@ const handleRedirect = () => {
 
 </script>
 
-<style lang="scss">
-body {
+<style lang="scss" scoped>
+.bg-gradient {
   background: linear-gradient(#1976d2, #26a69a) !important;
 }
 

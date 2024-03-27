@@ -23,11 +23,14 @@
 import { computed, defineComponent, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router'
 import { useJobsStore } from '../stores/jobs';
+import { useQuasar } from 'quasar';
+
 export default defineComponent({
   name: 'IndexPage',
   components: {
   },
   setup() {
+    const $q = useQuasar();
     const router = useRouter();
     const jobsStore = useJobsStore();
     const route = useRoute();
@@ -53,13 +56,20 @@ export default defineComponent({
       jobsStore.resetJobListFiltered();
     }
 
-    const searchJobs = () => {
+    const searchJobs = async () => {
 
       if (path.value != '/jobs') {
         router.push({ path: '/jobs' });
       }
 
-      jobsStore.searchJobs(params.value);
+      $q.loading.show({
+        delay: 0 // ms
+      });
+
+
+      await jobsStore.searchJobs(params.value);
+
+      $q.loading.hide();
 
     };
     return { searchJobs, params, handleResetSearch };
