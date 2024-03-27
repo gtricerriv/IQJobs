@@ -6,6 +6,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/TestDesign.vue'),
   },
   {
+    path: '/landing',
+    component: () => import('pages/LandingPage.vue'),
+  },
+  {
     path: '/widget-jobs',
     component: () => import('pages/Widget.vue'),
   },
