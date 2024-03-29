@@ -128,7 +128,7 @@ export default defineComponent({
           updateUserData();
         }
       }, 2000)
-      updateUserData();
+      //updateUserData();
       handleLayoutColor()
     })
 

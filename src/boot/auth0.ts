@@ -11,8 +11,8 @@ export default boot(async ({ app, router }) => {
     domain: 'tech-iqjobs.us.auth0.com',
     clientId: 'szd18YgGw6dSQUGkmwXdw9Ew2mYJGInF',
     authorizationParams: {
-      // redirect_uri: window.location.origin
-      redirect_uri: '127.0.0.1:8080',
+      redirect_uri: window.location.origin
+      //redirect_uri: '127.0.0.1:8080',
     },
   });
   app.use(auth0);
