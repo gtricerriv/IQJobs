@@ -18,7 +18,6 @@ module.exports = configure(function () {
     supportTS: {
       tsCheckerConfig: {
         eslint: {
-
           enabled: false,
           files: './src/**/*.{ts,tsx,js,jsx,vue}',
         },
@@ -100,7 +99,7 @@ module.exports = configure(function () {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Dialog', 'LocalStorage', 'SessionStorage'],
+      plugins: ['Dialog', 'LocalStorage', 'SessionStorage', 'Loading'],
     },
 
     // animations: 'all', // --- includes all animations
@@ -110,7 +109,6 @@ module.exports = configure(function () {
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
     ssr: {
       pwa: false,
-
 
       /**
        * Manually serialize the store state and provide it yourself
@@ -139,7 +137,7 @@ module.exports = configure(function () {
       manualPostHydrationTrigger: false,
 
       prodPort: 3000, // The default port that the production server should use
-                      // (gets superseded if process∙env∙PORT is specified at runtime)
+      // (gets superseded if process∙env∙PORT is specified at runtime)
 
       maxAge: 1000 * 60 * 60 * 24 * 30,
       // Tell browser when a file from the server should expire from cache
@@ -149,12 +147,12 @@ module.exports = configure(function () {
       // List of SSR middleware files (src-ssr/middlewares/*). Order is important.
       middlewares: [
         // ...
-        'render' // Should not be missing, and should be last in the list.
+        'render', // Should not be missing, and should be last in the list.
       ],
 
       // optional; add/remove/change properties
       // of production generated package.json
-      extendPackageJson (pkg) {
+      extendPackageJson(pkg) {
         // directly change props of pkg;
         // no need to return anything
       },
@@ -162,7 +160,7 @@ module.exports = configure(function () {
       // optional;
       // handles the Webserver webpack config ONLY
       // which includes the SSR middleware
-      extendWebpackWebserver (cfg) {
+      extendWebpackWebserver(cfg) {
         // directly change props of cfg;
         // no need to return anything
       },
@@ -170,10 +168,10 @@ module.exports = configure(function () {
       // optional; EQUIVALENT to extendWebpack() but uses webpack-chain;
       // handles the Webserver webpack config ONLY
       // which includes the SSR middleware
-      chainWebpackWebserver (chain) {
+      chainWebpackWebserver(chain) {
         // chain is a webpack-chain instance
         // of the Webpack configuration
-      }
+      },
     },
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-pwa/configuring-pwa
