@@ -160,6 +160,7 @@ export default defineComponent({
 
     const handleRoleToggle = () => {
       userStore.setRole(recruiter.value);
+      widgetStore.cleanWidgetData();
     }
     const handleLayoutColor = () => {
       if (isAdmin.value) {

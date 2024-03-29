@@ -13,8 +13,8 @@ export const useWidgetStore = defineStore({
     selectedApplicant: {},
     showAplicantDialog: false,
     showRightSidebar: false,
-    showAdminProfiles: false,
     widgetProfiles: [],
+    showAdminProfiles: false,
   }),
   getters: {
     getWidgetAplicants(): any {
@@ -28,11 +28,24 @@ export const useWidgetStore = defineStore({
     },
   },
   actions: {
+    cleanWidgetData() {
+      this.widgetData = {
+        description: '',
+        position: '',
+        provider: '',
+        title: '',
+      };
+      this.widgetAplicants = [];
+      this.widgetProfiles = [];
+      this.selectedApplicant = {};
+      this.showAplicantDialog = false;
+      this.setShowAdminProfiles(false);
+    },
     setShowRightSidebar(newStatus: boolean) {
       this.showRightSidebar = newStatus;
     },
-    setShowAdminProfiles(newStatus: boolean) {
-      this.showRightSidebar = newStatus;
+    setShowAdminProfiles(status: any) {
+      this.showAdminProfiles = status;
     },
     updateWidgetData(newData: any) {
       this.showRightSidebar = true;
