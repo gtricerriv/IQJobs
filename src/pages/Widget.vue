@@ -16,6 +16,10 @@
           <div v-html="description"></div>
         </div>
 
+        <div v-if="widgetStore.showAdminProfiles">
+          <AplicantCard :aplicant="item" v-for="item in widgetStore.widgetProfiles" :key="item._id" />
+        </div>
+
         <div v-else>
           <AplicantCard :aplicant="item" v-for="item in widgetStore.getWidgetAplicants" :key="item.id" />
         </div>

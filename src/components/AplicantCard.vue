@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleSetDataToModal" class="onPress q-pa-md bg-s shadow-4 bg-grey-1">
+  <div @click="handleSetDataToModal" class="onPress q-pa-md bg-s shadow-4 bg-grey-1 mb-1">
     <div class="row">
       <div v-if="!aplicant.premiun == true" class="col-3 text-start">
         Premiun 🏅
@@ -36,5 +36,9 @@ const handleSetDataToModal = () => {
 <style scoped>
 .onPress {
   cursor: pointer;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
 }
 </style>

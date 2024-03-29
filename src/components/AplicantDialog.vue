@@ -16,7 +16,8 @@
           <h6>contact: {{ widgetStore.selectedApplicant?.contact }}</h6>
           <h6>Premiun: {{ widgetStore.selectedApplicant?.premium ? 'Yes' : 'No' }}</h6>
 
-          <q-btn class="q-mt-md" color="primary" @click="handleStartChat">{{ theChatExist ? 'View Chat' : 'Start Chat'
+          <q-btn v-if="!userStore.isAdmin" class="q-mt-md" color="primary" @click="handleStartChat">{{ theChatExist ?
+      'View Chat' : 'Start Chat'
             }}</q-btn>
         </q-card-section>
 
@@ -31,6 +32,7 @@
 <script setup lang="ts">
 import { useWidgetStore } from '../stores/widget';
 import { useChatsStore } from '../stores/chat';
+import { useUserStore } from '../stores/user';
 import { useQuasar } from 'quasar';
 import { useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
@@ -38,6 +40,7 @@ import { watch, ref } from 'vue';
 
 const $q = useQuasar();
 const widgetStore = useWidgetStore();
+const userStore = useUserStore();
 const { selectedApplicant } = storeToRefs(widgetStore);
 const chatStore = useChatsStore();
 const router = useRouter();

@@ -82,12 +82,12 @@ const menuAdmin = [
     color: 'red-5',
     link: 'admin/users',
   },
-  {
-    title: 'Jobs',
-    icon: 'work',
-    color: 'red-5',
-    link: 'admin/jobs',
-  },
+  // {
+  //   title: 'Jobs',
+  //   icon: 'work',
+  //   color: 'red-5',
+  //   link: 'admin/jobs',
+  // },
   {
     title: 'Settings',
     icon: 'settings',
@@ -105,7 +105,7 @@ export default defineComponent({
 
   setup() {
     const userStore = useUserStore();
-    const { currentRole } = storeToRefs(userStore)
+    const { currentRole, isAdmin } = storeToRefs(userStore)
 
     const menuToShow = ref([]);
 
@@ -121,9 +121,20 @@ export default defineComponent({
       handleMenuOptions();
     });
 
+    watch(isAdmin, () => {
+      if (isAdmin.value) {
+        menuToShow.value = menuAdmin;
+      }
+    });
+
     onMounted(() => {
       handleMenuOptions();
+
+      if (isAdmin.value) {
+        menuToShow.value = menuAdmin;
+      }
     });
+
 
     return {
       menuToShow,

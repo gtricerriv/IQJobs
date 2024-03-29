@@ -9,6 +9,7 @@ export const useUserStore = defineStore('counter', {
     currentRole: 'recruiter', // recruiter o applicant
     premiun: false, // TODO: pa despues
     currentProfile: {},
+    isAdmin: false,
   }),
 
   getters: {
@@ -25,14 +26,22 @@ export const useUserStore = defineStore('counter', {
     async fetchUserData(userId: string) {
       try {
         // TODO: remover luego
-        const response = await axios.get(
+        const { data } = await axios.get(
           `https://getuserbyauth0route-7mlffi3t2a-uc.a.run.app?id=${userId}`
         );
-        this.userData = response.data; // Almacena los datos del usuario en el state userData
+        this.userData = data; // Almacena los datos del usuario en el state userData
 
         // Accede al store de profile y actualiza los datos del usuario
         const profileStore = useProfileStore();
-        profileStore.updateProfiles(response.data.user.profile);
+        profileStore.updateProfiles(data.user.profile);
+
+        // Verificamos si es admin
+        if (data.user.email === '@iqjobs.com') {
+          this.isAdmin = true;
+        } else {
+          // TODO: cambiar aca a false
+          this.isAdmin = false;
+        }
       } catch (error) {
         console.error(error);
       }

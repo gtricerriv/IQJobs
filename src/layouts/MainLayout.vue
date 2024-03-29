@@ -30,8 +30,8 @@
 
               <q-btn color="primary" :label="isAuthenticated ? 'Logout' : 'Login'" push size="sm" v-close-popup
                 @click="loginOrLogout" />
-              <q-toggle v-model="recruiter" @click="handleRoleToggle" color="pink" icon="supervised_user_circle"
-                :label="recruiter ? 'Recruiter' : 'Aplicant'" />
+              <q-toggle v-if="!userStore.isAdmin" v-model="recruiter" @click="handleRoleToggle" color="pink"
+                icon="supervised_user_circle" :label="recruiter ? 'Recruiter' : 'Aplicant'" />
             </div>
           </div>
         </q-btn-dropdown>
@@ -106,7 +106,7 @@ export default defineComponent({
     const recruiter = ref(userStore.getCurrentRole);
     const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const leftDrawerOpen = ref(false);
-    const { currentRole } = storeToRefs(userStore)
+    const { currentRole, isAdmin } = storeToRefs(userStore)
     const { showRightSidebar } = storeToRefs(widgetStore)
     const rightDrawerOpen = ref(showRightSidebar);
     onUpdated(() => {
@@ -162,6 +162,9 @@ export default defineComponent({
       userStore.setRole(recruiter.value);
     }
     const handleLayoutColor = () => {
+      if (isAdmin.value) {
+        return setCssVar('primary', '#f04f4f');
+      }
       if (userStore.getCurrentRole) {
         setCssVar('primary', '#00897B');
       } else {
@@ -170,6 +173,11 @@ export default defineComponent({
     }
 
     watch(currentRole, () => {
+      handleLayoutColor();
+      router.push({ path: '/' });
+    });
+
+    watch(isAdmin, () => {
       handleLayoutColor();
       router.push({ path: '/' });
     });
