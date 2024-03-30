@@ -61,6 +61,27 @@ export const getUserByAuth0 = onRequest(async (request, response) => {
   }
 });
 
+export const getUsersAdmin = onRequest(async (request, response) => {
+  try {
+    await connectToDatabase();
+    const userId = request.query.id as string;
+    const user = await UserModel.find({}).populate(
+      'profile'
+    );
+
+
+    if (!user) {
+      response.status(404).json({ message: 'User not found' });
+    } else {
+      response.status(200).json(user);
+    }
+  } catch (error: any) {
+    response.status(500).json({ error: error.message });
+  } finally {
+    await closeDatabaseConnection();
+  }
+});
+
 // Función para actualizar un usuario por ID
 export const updateUserById = onRequest(async (request, response) => {
   try {

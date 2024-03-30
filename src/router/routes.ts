@@ -25,19 +25,19 @@ const routes: RouteRecordRaw[] = [
       { path: '/cv', component: () => import('pages/CV.vue') },
       { path: '/settings', component: () => import('pages/Settings.vue') },
       { path: '/chats', component: () => import('pages/ChatPage.vue') },
-      { path: '/admin/users', component: () => import('pages/UserPage.vue') },
     ],
   },
   {
     path: '/admin',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: '', component: () => import('components/TableAdminJobs.vue') },
       { path: '/jobs', component: () => import('pages/JobPosts.vue') },
       { path: '/new-job', component: () => import('pages/NewJob.vue') },
       { path: '/applicants', component: () => import('pages/Applicant.vue') },
       { path: '/recruiters', component: () => import('pages/Recruiter.vue') },
       { path: '/settings', component: () => import('pages/Settings.vue') },
+      { path: '/users', component: () => import('pages/UserPage.vue') },
     ],
   },
 

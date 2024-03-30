@@ -12,9 +12,9 @@
 
 
 
-import {Dialog,LocalStorage,SessionStorage} from 'quasar'
+import {Dialog,LocalStorage,SessionStorage,Loading} from 'quasar'
 
 
 
-export default { config: {},plugins: {Dialog,LocalStorage,SessionStorage} }
+export default { config: {},plugins: {Dialog,LocalStorage,SessionStorage,Loading} }
 

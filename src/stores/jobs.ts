@@ -59,8 +59,8 @@ export const useJobsStore = defineStore('jobs', {
 
         const baseUrl =
           process.env.NODE_ENV === 'production'
-            ? 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/'
-            : 'https://getjobsroute-7mlffi3t2a-uc.a.run.app/';
+            ? 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/'
+            : 'https://getjobswithuserroute-7mlffi3t2a-uc.a.run.app/';
 
         const params = new URLSearchParams();
 

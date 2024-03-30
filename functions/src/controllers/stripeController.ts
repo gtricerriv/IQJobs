@@ -49,33 +49,37 @@ export const createSubscription = onRequest(async (req, res) => {
 
 export const createCustomer = onRequest(async (req, res) => {
   try {
-    const stripe = new Stripe(
-      'sk_test_51OWqLSAbpbhU2RpikTr0zxLgFm8UrQQhl4eg7hZCEZEA9687RYGciuKSjvMInanzLJITLDBHpNZaYQE0j5yJF5QR00RW4Un8jS'
-    );
+    const stripe = new Stripe('sk_test_51OWqLSAbpbhU2RpikTr0zxLgFm8UrQQhl4eg7hZCEZEA9687RYGciuKSjvMInanzLJITLDBHpNZaYQE0j5yJF5QR00RW4Un8jS');
 
     // Obtener los datos de los clientes desde la solicitud
     const { email, name } = req.body;
 
-    // Crear el primer cliente con un identificador único
-    const customer1 = await stripe.customers.create({
-      email: email,
-      name: name,
-      metadata: { role: 'recruiter' },
-    });
+    let existingCustomer;
 
-    // Crear el segundo cliente con un identificador único diferente
-    const customer2 = await stripe.customers.create({
-      email: email,
-      name: name,
-      metadata: { role: 'applicant' },
-    });
+    // Buscar un cliente con el mismo email
+    const customers = await stripe.customers.list({ email: email });
 
-    console.log('Primer cliente creado en Stripe:', customer1);
-    console.log('Segundo cliente creado en Stripe:', customer2);
+    if (customers.data && customers.data.length > 0) {
+      // Si existe al menos un cliente con el mismo email, utilizar el primer cliente encontrado
+      existingCustomer = customers.data[0];
+      console.log('Cliente existente en Stripe:', existingCustomer);
 
-    res.status(200).send({ recruiter: customer1, applicant: customer2 });
+    } else {
+      // Si no existe un cliente con el mismo email, crear uno nuevo
+      existingCustomer = await stripe.customers.create({
+        email: email,
+        name: name
+      });
+
+      console.log('Nuevo cliente creado en Stripe:', existingCustomer);
+      res.status(200).send(existingCustomer);
+
+    }
+
+    res.status(200).send(existingCustomer);
+
   } catch (error) {
-    console.error('Error al crear los clientes en Stripe:', error);
-    res.status(500).send('Ocurrió un error al crear los clientes en Stripe');
+    console.error('Error al crear o encontrar el cliente en Stripe:', error);
+    res.status(500).send('Ocurrió un error al crear o encontrar el cliente en Stripe');
   }
 });

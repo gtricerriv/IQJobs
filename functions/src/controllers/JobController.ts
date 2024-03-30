@@ -11,6 +11,16 @@ const handleResponse = (response: Response, statusCode: number, data: any) => {
 export const createJob = async (request: Request, response: Response) => {
   try {
     await connectToDatabase();
+
+    // Verificar si el usuario ya existe en la base de datos
+    const existingJob = await JobModel.findOne({ auth0_id: request.body.auth0_id });
+
+    if(existingJob){
+      handleResponse(response, 400, { error: 'El trabajo ya existe para este usuario' });
+      return;
+    }
+
+    // Si el usuario no existe, entonces crearlo
     const newJob = new JobModel(request.body);
     await newJob.save();
     handleResponse(response, 201, newJob);
@@ -20,6 +30,7 @@ export const createJob = async (request: Request, response: Response) => {
     await closeDatabaseConnection();
   }
 };
+
 
 export const getJobs = async (request: Request, response: Response) => {
   try {

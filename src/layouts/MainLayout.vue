@@ -112,22 +112,27 @@ export default defineComponent({
 
     onMounted(() => {
       // console.log(isAuthenticated, 'mounted')
-      setTimeout(() => {
-        // const userId = $q.localStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
-        // if (!userId) {
-        //   console.log('NO EXISTE EL USERID EN STORAGE', userId);
-        //   loginWithRedirect();
-        //   $q.localStorage.remove('userId');
-        // } else {
-        //   updateUserData();
-        // }
+      setTimeout(() => { 
+        const userId = $q.localStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
+        console.log(userId, user.value?.sub,'id') 
+        if (!userId && !user.value?.sub) {
+           loginWithRedirect();
+         } else {
+          updateUserData();
+        }
       }, 5000)
       handleLayoutColor()
     })
 
     const updateUserData = async () => {
       // Aquí puedes llamar a una acción en la store de 'user' para actualizar los datos del
+      $q.localStorage.set('userId', user.value?.sub)
+      console.log($q.localStorage.getItem('userId'))
       await userStore.fetchUserData(user.value?.sub);
+      console.log(userStore.isAdmin)
+      if(userStore.isAdmin){
+        this.$router.push('/admin/users')
+      }
     };
 
     const handleLogout = () => {
