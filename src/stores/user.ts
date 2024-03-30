@@ -43,7 +43,6 @@ export const useUserStore = defineStore('counter', {
         if (this.isAdminEmail(data.user.email)) {
           this.isAdmin = true;
         } else {
-          // TODO: cambiar aca a false
           this.isAdmin = false;
         }
       } catch (error) {
