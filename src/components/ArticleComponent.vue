@@ -3,7 +3,9 @@
     <div class="row">
       <div class="col-3 text-start">
         <q-icon color="grey" size="xl" name="newspaper" />
-        <q-icon class="q-ml-md" color="primary" size="sm" name="group" /> {{ aplicants.length }}
+        <span v-if="premiun">
+          <q-icon class="q-ml-md" color="primary" size="sm" name="group" /> {{ aplicants.length }}
+        </span>
       </div>
       <div class="col q-mt-sm text-right text-grey">
         <div class="text-bold">{{ title }}</div>
@@ -19,8 +21,9 @@
 import { defineComponent, ref } from 'vue';
 import { useQuasar } from 'quasar';
 import { useWidgetStore } from '../stores/widget';
+import { useUserStore } from '../stores/user';
+import { storeToRefs } from 'pinia';
 
-const widgetStore = useWidgetStore();
 export default defineComponent({
   name: 'ArticleComponent',
   props: {
@@ -50,6 +53,10 @@ export default defineComponent({
     }
   },
   setup(props) {
+    const widgetStore = useWidgetStore();
+    const userStore = useUserStore();
+
+    const { premiun } = storeToRefs(userStore);
     const $q = useQuasar();
 
     const cleanDescription = ref('');
@@ -88,7 +95,8 @@ export default defineComponent({
       props,
       cleanDescription,
       updateAplicants,
-      updateWidget
+      updateWidget,
+      premiun
     };
   },
 });
