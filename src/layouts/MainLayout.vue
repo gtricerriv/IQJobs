@@ -28,8 +28,7 @@
                 {{ user ? user.nickname : 'Account' }}
               </div>
 
-              <q-btn color="primary" :label="isAuthenticated ? 'Logout' : 'Login'" push size="sm" v-close-popup
-                @click="loginOrLogout" />
+              <q-btn color="primary" label="Logout" push size="sm" v-close-popup @click="handleLogout" />
               <q-toggle v-if="!userStore.isAdmin" v-model="recruiter" @click="handleRoleToggle" color="pink"
                 icon="supervised_user_circle" :label="recruiter ? 'Recruiter' : 'Aplicant'" />
             </div>
@@ -68,8 +67,8 @@
 }
 </style>
 <script lang="ts">
-import { setCssVar, LocalStorage } from 'quasar'
-import { defineComponent, ref, onUpdated, onMounted, watch } from 'vue';
+import { setCssVar, useQuasar } from 'quasar'
+import { defineComponent, ref, onMounted, watch } from 'vue';
 import MenuComponent from 'components/Menu.vue';
 import NotificationBell from '../components/NotificationBell.vue';
 import GoogleTraslate from '../components/GoogleTraslate.vue';
@@ -100,6 +99,7 @@ export default defineComponent({
   },
 
   setup() {
+    const $q = useQuasar()
     const router = useRouter();
     const widgetStore = useWidgetStore();
     const userStore = useUserStore();
@@ -109,45 +109,30 @@ export default defineComponent({
     const { currentRole, isAdmin } = storeToRefs(userStore)
     const { showRightSidebar } = storeToRefs(widgetStore)
     const rightDrawerOpen = ref(showRightSidebar);
-    onUpdated(() => {
-      setTimeout(() => {
-        if (!isAuthenticated.value) {
-          // loginWithRedirect();
-        }
-      }, 1000)
-    })
 
     onMounted(() => {
       // console.log(isAuthenticated, 'mounted')
       setTimeout(() => {
-        // LocalStorage.set('userId', 'auth0|65edb8ef5822600f8660eb4b')
-        const userId = LocalStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
-        if (!isAuthenticated.value && !userId) {
-          loginWithRedirect();
-        } else {
-          updateUserData();
-        }
-      }, 2000)
-      //updateUserData();
+        // const userId = $q.localStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
+        // if (!userId) {
+        //   console.log('NO EXISTE EL USERID EN STORAGE', userId);
+        //   loginWithRedirect();
+        //   $q.localStorage.remove('userId');
+        // } else {
+        //   updateUserData();
+        // }
+      }, 5000)
       handleLayoutColor()
     })
 
-    const updateUserData = () => {
+    const updateUserData = async () => {
       // Aquí puedes llamar a una acción en la store de 'user' para actualizar los datos del
-      LocalStorage.set('userId', user.value?.sub)
-      userStore.fetchUserData('auth0|65edb8ef5822600f8660eb4b');
+      await userStore.fetchUserData(user.value?.sub);
     };
 
-    const loginOrLogout = () => {
-      if (isAuthenticated.value) {
-        logout();
-        LocalStorage.remove('userId');
-      } else {
-        const userId = LocalStorage.getItem('userId');
-        if (!userId) {
-          loginWithRedirect();
-        }
-      }
+    const handleLogout = () => {
+      $q.localStorage.remove('userId');
+      logout();
     };
 
     const toggleLeftDrawer = () => {
@@ -194,7 +179,7 @@ export default defineComponent({
       updateUserData,
       user,
       recruiter,
-      loginOrLogout,
+      handleLogout,
       handleRoleToggle,
       currentRole,
       userStore

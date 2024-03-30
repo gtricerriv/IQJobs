@@ -23,6 +23,10 @@ export const useUserStore = defineStore('counter', {
   },
 
   actions: {
+    isAdminEmail(email: string) {
+      const patron = /@iqjobs.com$/;
+      return patron.test(email);
+    },
     async fetchUserData(userId: string) {
       try {
         // TODO: remover luego
@@ -36,7 +40,7 @@ export const useUserStore = defineStore('counter', {
         profileStore.updateProfiles(data.user.profile);
 
         // Verificamos si es admin
-        if (data.user.email === '@iqjobs.com') {
+        if (this.isAdminEmail(data.user.email)) {
           this.isAdmin = true;
         } else {
           // TODO: cambiar aca a false
