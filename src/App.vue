@@ -23,7 +23,7 @@ export default defineComponent({
         } else if (!$q.localStorage.getItem('userId') || $q.localStorage.getItem('userId') == 'undefined') {
           loginWithRedirect();
         }
-      }, 6000)
+      }, 8000)
     });
   }
 })
