@@ -30,7 +30,7 @@ module.exports = configure(function () {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
-    boot: ['i18n', 'axios', 'auth0'],
+    boot: ['i18n', 'axios'],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
     css: ['app.scss'],
@@ -99,7 +99,7 @@ module.exports = configure(function () {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Dialog', 'LocalStorage', 'SessionStorage', 'Loading'],
+      plugins: ['Dialog', 'LocalStorage', 'SessionStorage', 'Loading', 'Notify'],
     },
 
     // animations: 'all', // --- includes all animations

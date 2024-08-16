@@ -46,7 +46,7 @@
       <WidgetComponent :description="widgetStore.widgetData.description" :position="widgetStore.widgetData.position"
         :provider="widgetStore.widgetData.provider" :title="widgetStore.widgetData.title" />
       <div class="absolute-bottom">
-        <q-btn color="primary" class="fit" :label="userStore.getCurrentRole ? '' : 'Postular a Oferta'" />
+        <q-btn @Click="notify()" color="primary" class="fit" :label="userStore.getCurrentRole ? '' : 'Postular a Oferta'" />
       </div>
       <!-- drawer content -->
     </q-drawer>
@@ -54,32 +54,37 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <!-- Chat Popup should be outside the drawers to ensure it is on top -->
+    <AplicantDialog></AplicantDialog>
   </q-layout>
-
-  <AplicantDialog></AplicantDialog>
-
 </template>
+
 <style>
 @media screen and (max-width: 767px) {
   .q-drawer--right {
     width: 80% !important;
   }
 }
+
+
+
 </style>
+
 <script lang="ts">
-import { setCssVar, useQuasar } from 'quasar'
+import { setCssVar, useQuasar } from 'quasar';
 import { defineComponent, ref, onMounted, watch } from 'vue';
 import MenuComponent from 'components/Menu.vue';
 import NotificationBell from '../components/NotificationBell.vue';
 import GoogleTraslate from '../components/GoogleTraslate.vue';
 import SearchBar from 'components/SearchBar.vue';
 import WidgetComponent from 'pages/Widget.vue';
-import { useAuth0 } from '@auth0/auth0-vue';
 import { useRouter } from 'vue-router';
 import { useWidgetStore } from '../stores/widget';
-import { useUserStore } from '../stores/user'
+import { useUserStore } from '../stores/user';
 import { storeToRefs } from 'pinia';
-import AplicantDialog from '../components/AplicantDialog.vue'
+import AplicantDialog from '../components/AplicantDialog.vue';
+
 const menuAdmin = [
   { title: 'Users', icon: 'people', color: 'red' },
   { title: 'Applicants', icon: 'translate', color: 'admin' },
@@ -87,9 +92,11 @@ const menuAdmin = [
   { title: 'Jobs', icon: 'list', color: 'admin' },
   { title: 'Settings', icon: 'list', color: 'admin' },
 ];
+
 export default defineComponent({
   name: 'MainLayout',
   components: {
+    
     SearchBar,
     MenuComponent,
     WidgetComponent,
@@ -99,39 +106,29 @@ export default defineComponent({
   },
 
   setup() {
-    const $q = useQuasar()
+    const $q = useQuasar();
     const router = useRouter();
+    const showChat = ref(false);
     const widgetStore = useWidgetStore();
     const userStore = useUserStore();
     const recruiter = ref(userStore.getCurrentRole);
-    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     const leftDrawerOpen = ref(false);
-    const { currentRole, isAdmin } = storeToRefs(userStore)
-    const { showRightSidebar } = storeToRefs(widgetStore)
+    const { currentRole, isAdmin, userData } = storeToRefs(userStore);
+    const user = userData;
+    const { showRightSidebar } = storeToRefs(widgetStore);
     const rightDrawerOpen = ref(showRightSidebar);
 
     onMounted(() => {
-      // console.log(isAuthenticated, 'mounted')
-      setTimeout(() => { 
-        const userId = $q.localStorage.getItem('userId'); // Utiliza LocalStorage de Quasar para obtener el ID del usuario
-        console.log(userId, user.value?.sub,'id') 
-        if (!userId && !user.value?.sub) {
-           loginWithRedirect();
-         } else {
-          updateUserData();
-        }
-      }, 5000)
-      handleLayoutColor()
-    })
+      setTimeout(() => {
+        updateUserData();
+      }, 5000);
+      handleLayoutColor();
+    });
 
     const updateUserData = async () => {
-      // Aquí puedes llamar a una acción en la store de 'user' para actualizar los datos del
-      $q.localStorage.set('userId', user.value?.sub)
-      console.log($q.localStorage.getItem('userId'))
-      await userStore.fetchUserData(user.value?.sub);
-      console.log(userStore.isAdmin)
-      if(userStore.isAdmin){
-        this.$router.push('/admin/users')
+      await userStore.fetchUserData(user);
+      if (userStore.isAdmin) {
+        router.push('/admin/users');
       }
     };
 
@@ -151,17 +148,29 @@ export default defineComponent({
     const handleRoleToggle = () => {
       userStore.setRole(recruiter.value);
       widgetStore.cleanWidgetData();
-    }
+    };
+
     const handleLayoutColor = () => {
       if (isAdmin.value) {
-        return setCssVar('primary', '#f04f4f');
-      }
-      if (userStore.getCurrentRole) {
+        setCssVar('primary', '#f04f4f');
+      } else if (userStore.getCurrentRole) {
         setCssVar('primary', '#00897B');
       } else {
         setCssVar('primary', '#1976d2');
       }
-    }
+    };
+
+    const notify = async () => {
+      $q.notify({
+        color: 'positive',
+        position: 'top-left',
+        message: 'You applied for the job!',
+        icon: 'check_circle',
+        onDismiss: () => {
+          showChat.value = true; // Show the chat when notification is dismissed
+        }
+      });
+    };
 
     watch(currentRole, () => {
       handleLayoutColor();
@@ -175,7 +184,6 @@ export default defineComponent({
 
     return {
       essentialLinks: menuAdmin,
-      isAuthenticated,
       leftDrawerOpen,
       rightDrawerOpen,
       toggleLeftDrawer,
@@ -187,7 +195,9 @@ export default defineComponent({
       handleLogout,
       handleRoleToggle,
       currentRole,
-      userStore
+      userStore,
+      notify,
+      showChat
     };
   },
 });

@@ -1,13 +1,11 @@
 import { defineStore } from 'pinia';
 import { useProfileStore } from './profile';
-import axios from 'axios';
 
-export const useUserStore = defineStore('counter', {
+export const useUserStore = defineStore('user', {
   state: () => ({
-    userData: null, // Agregar un state para almacenar los datos del usuario
-    // currentRole: 'applicant', // recruiter o applicant
+    userData: null, // Almacena los datos del usuario
     currentRole: 'recruiter', // recruiter o applicant
-    premiun: false, // TODO: pa despues
+    premium: false, // TODO: pa despues
     currentProfile: {},
     isAdmin: false,
   }),
@@ -24,54 +22,93 @@ export const useUserStore = defineStore('counter', {
 
   actions: {
     isAdminEmail(email: string) {
-      const patron = /@iqjobs.com$/;
-      return patron.test(email);
+      const pattern = /@iqjobs.com$/;
+      return pattern.test(email);
     },
-    async fetchUserData(userId: string) {
-      try {
-        // TODO: remover luego
-        const { data } = await axios.get(
-          `https://getuserbyauth0route-7mlffi3t2a-uc.a.run.app?id=${userId}`
-        );
-        this.userData = data; // Almacena los datos del usuario en el state userData
 
-        // Accede al store de profile y actualiza los datos del usuario
-        const profileStore = useProfileStore();
-        profileStore.updateProfiles(data.user.profile);
+    fetchUserData(userId: string) {
+      // Simula una consulta a la API con datos de ejemplo
+      const mockUserData = {
+          nickname: 'Giancarlo',
+          email: 'giancarlo.tricerri@example.com',
+          profile: {
+            name: 'Giancarlo Tricerri',
+            profession: 'Desarrollador de Software, Diseño Gráfico y Análisis de Datos',
+            bio: 'Giancarlo Tricerri es un experto en desarrollo de software con experiencia en diseño gráfico y análisis de datos. Su trabajo abarca una amplia gama de habilidades técnicas y creativas.',
+            skills: ['Desarrollo de Software', 'Diseño Gráfico', 'Análisis de Datos'],
+            experience: [
+              {
+                title: 'Desarrollador de Software',
+                company: 'Tech Solutions',
+                duration: '3 años',
+              },
+              {
+                title: 'Diseñador Gráfico',
+                company: 'Creative Agency',
+                duration: '2 años',
+              },
+              {
+                title: 'Analista de Datos',
+                company: 'Data Insights',
+                duration: '1 año',
+              },
+            ],
+          },
+      };
 
-        // Verificamos si es admin
-        if (this.isAdminEmail(data.user.email)) {
-          this.isAdmin = true;
-        } else {
-          this.isAdmin = false;
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      this.userData = mockUserData; // Almacena los datos del usuario en el state userData
+
+      // Accede al store de profile y actualiza los datos del usuario
+      const profileStore = useProfileStore();
+      profileStore.updateProfiles(mockUserData.profile);
+
+      // Verificamos si es admin
+      this.isAdmin = this.isAdminEmail(mockUserData.email);
     },
+
     setRole(role: boolean) {
-      if (role) {
-        this.currentRole = 'recruiter';
-      } else {
-        this.currentRole = 'applicant';
-      }
+      this.currentRole = role ? 'recruiter' : 'applicant';
     },
+
     setCurrentProfile(profile: object) {
       this.currentProfile = profile;
     },
-    isCurrentProfileSelected() {
-      return Object.keys(this.currentProfile).length;
-    },
-    async postCreateProfile(body: {}) {
-      try {
-        // TODO: remover luego
-        // const URL = '';
-        // const { data } = await axios.post(URL, body);
 
-        console.log('trabajo creado correctamente', body);
-      } catch (error) {
-        console.error(error);
-      }
+    isCurrentProfileSelected() {
+      return Object.keys(this.currentProfile).length > 0;
+    },
+
+    postCreateProfile(body: {}) {
+      // Simula una operación de creación de perfil
+      console.log('Perfil creado correctamente', body);
+    },
+
+    setExampleProfile() {
+      this.currentProfile = {
+        name: 'Giancarlo Tricerri',
+        profession: 'Desarrollador de Software, Diseño Gráfico y Análisis de Datos',
+        email: 'giancarlo.tricerri@example.com',
+        bio: 'Giancarlo Tricerri es un experto en desarrollo de software con experiencia en diseño gráfico y análisis de datos. Su trabajo abarca una amplia gama de habilidades técnicas y creativas.',
+        skills: ['Desarrollo de Software', 'Diseño Gráfico', 'Análisis de Datos'],
+        experience: [
+          {
+            title: 'Desarrollador de Software',
+            company: 'Tech Solutions',
+            duration: '3 años',
+          },
+          {
+            title: 'Diseñador Gráfico',
+            company: 'Creative Agency',
+            duration: '2 años',
+          },
+          {
+            title: 'Analista de Datos',
+            company: 'Data Insights',
+            duration: '1 año',
+          },
+        ],
+      };
     },
   },
 });
+ 

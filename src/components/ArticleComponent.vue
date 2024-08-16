@@ -3,9 +3,14 @@
     <div class="row">
       <div class="col-3 text-start">
         <q-icon color="grey" size="xl" name="newspaper" />
-        <span v-if="premiun">
-          <q-icon class="q-ml-md" color="primary" size="sm" name="group" /> {{ aplicants.length }}
-        </span>
+        <q-icon class="q-ml-md" color="primary" size="sm" name="group" /> {{ randomNumber }}
+        <q-icon
+          v-if="shouldShowStar"
+          class="q-ml-md"
+          color="primary"
+          size="sm"
+          name="star"
+        />
       </div>
       <div class="col q-mt-sm text-right text-grey">
         <div class="text-bold">{{ title }}</div>
@@ -53,6 +58,11 @@ export default defineComponent({
     }
   },
   setup(props) {
+    const randomNumber = ref(Math.floor(Math.random() * 20) + 1);
+
+    // Show star icon randomly
+    const shouldShowStar = ref(Math.random() < 0.5); // 50% chance
+
     const widgetStore = useWidgetStore();
     const userStore = useUserStore();
 
@@ -96,7 +106,9 @@ export default defineComponent({
       cleanDescription,
       updateAplicants,
       updateWidget,
-      premiun
+      premiun,
+      randomNumber,
+      shouldShowStar
     };
   },
 });

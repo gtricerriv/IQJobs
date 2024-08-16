@@ -8,7 +8,6 @@
           <div class="row no-wrap q-pa-md">
             <div class="column fit" style="justify-content: center; align-items: start">
               <q-checkbox v-model="params.title" label="title" color="teal" />
-              <q-checkbox v-model="params.companies" label="companies" color="teal" />
               <q-checkbox v-model="params.premiun" label="Premiun" color="teal" />
             </div>
           </div>

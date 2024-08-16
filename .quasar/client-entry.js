@@ -239,6 +239,9 @@ import quasarUserOptions from './quasar-user-options.js'
 
 
 
+console.info('[Quasar] Running SPA.')
+
+
 
 const publicPath = `/`
 
@@ -348,9 +351,7 @@ createQuasarApp(createApp, quasarUserOptions)
       
       import(/* webpackMode: "eager" */ 'boot/i18n'),
       
-      import(/* webpackMode: "eager" */ 'boot/axios'),
-      
-      import(/* webpackMode: "eager" */ 'boot/auth0')
+      import(/* webpackMode: "eager" */ 'boot/axios')
       
     ]).then(bootFiles => {
       const boot = mapFn(bootFiles).filter(entry => typeof entry === 'function')

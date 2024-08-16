@@ -11,6 +11,13 @@
       </div>
     </q-form>
 
+    <div class="q-pa-md">
+    <q-uploader
+      :factory="factoryFn"
+      style="max-width: 300px"
+    />
+  </div>
+
   </div>
 </template>
 <script lang="ts" setup>
@@ -41,8 +48,25 @@ const isValidURL = (url: string) => {
   return urlPattern.test(url);
 }
 
-const handleSubmit = async () => {
+const factoryFn = async (files) => {
+      // returning a Promise
 
+      return new Promise((resolve) => {
+        // simulating a delay of 2 seconds
+        setTimeout(() => {
+          handleSubmit()
+          resolve(true);
+        }, 2000)
+      })
+    }
+
+const handleSubmit = async () => {
+  $q.notify({
+          color: 'positive',
+          position: 'top-right',
+          message: 'Profile created successfully!',
+          icon: 'check_circle'
+        });
   if (profileUrl.value == '' || selectedOption.value == '') return;
 
   $q.loading.show({

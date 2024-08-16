@@ -1090,6 +1090,33 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@google-translate-select/constants@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/@google-translate-select/constants/-/constants-0.1.5.tgz"
+  integrity sha512-lJJhrT22IXiIZuP0J7g5b2d9qciqWHpzFieup5XAHtAzntFfG52dhT6mPQ06bD803g7zdBhbMpsULdGdAlvh1g==
+
+"@google-translate-select/theme-chalk@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/@google-translate-select/theme-chalk/-/theme-chalk-0.1.4.tgz"
+  integrity sha512-Vr65kOW19UmxaWYp9Lf91efunLdcuZiHMSq+qRGFVXP0tsvOAT1M+tCh71GqmOrJ0vqjWFGy8QXh43m9r7j9CQ==
+
+"@google-translate-select/utils@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npmjs.org/@google-translate-select/utils/-/utils-0.1.6.tgz"
+  integrity sha512-1vV1dQEY+PXLRHDo0rCAOgKtmAdXbFywptKZKeIsxxJVFGgt9e6+AepRe72fpvKwtVPzjjwM8nFlniNd7wozag==
+  dependencies:
+    "@google-translate-select/constants" "0.1.5"
+
+"@google-translate-select/vue3@^0.1.6":
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/@google-translate-select/vue3/-/vue3-0.1.8.tgz"
+  integrity sha512-Dbltk74NIf/buCVwFSOyOfoqvTZCaqbZScOTIahntcZ3e2rwHh/fXQWW0NdmQK+Fbva34UVbSSljAuKDUobSRw==
+  dependencies:
+    "@google-translate-select/constants" "0.1.5"
+    "@google-translate-select/theme-chalk" "0.1.4"
+    "@google-translate-select/utils" "0.1.6"
+    vue "^3.2.41"
+
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.14.tgz"
@@ -5173,6 +5200,11 @@ pac-resolver@^7.0.0:
   dependencies:
     degenerator "^5.0.0"
     netmask "^2.0.2"
+
+papaparse@^5.4.1:
+  version "5.4.1"
+  resolved "https://registry.npmjs.org/papaparse/-/papaparse-5.4.1.tgz"
+  integrity sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==
 
 param-case@^2.1.1:
   version "2.1.1"
